@@ -1,10 +1,10 @@
 {
   "name": "ALoginSeed",
+  "homepage": "https://github.com/Olousouzian/Alogin",
   "description": "",
   "main": "",
   "moduleType": [],
   "license": "MIT",
-  "homepage": "",
   "private": true,
   "ignore": [
     "**/.*",
@@ -17,6 +17,8 @@
     "angular-cookies": "~1.4.8",
     "angular-route": "~1.4.8",
     "angular-spinner": "~0.8.0",
-    "jquery": "jQuery#~2.1.4"
+    "jquery": "jQuery#~2.1.4",
+    "bootstrap": "~3.3.6",
+    "clone.js": "clone#~0.1.0"
   }
 }

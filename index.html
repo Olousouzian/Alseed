@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>AngularJS Login Seed</title>
 
+    <!-- Include CSS stylesheets -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
-    
     <link href="app-content/app.css" rel="stylesheet" />
+    <!-- ! CSS -->
+
 </head>
 <body>
+    <!-- Menu -->
     <div ng-if="menuAvalaible" ng-include="'menu/menu.view.html'"></div>
-        <div class="container">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-                <div ng-view></div>
-            </div>
-        </div>
+    <!-- !Menu -->
 
+    <!-- Body App -->
+    <div class="container">
+        <div class="col-sm-8 col-sm-offset-2">
+            <!-- Alerts -->
+            <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+            <!-- !Alerts -->
+
+            <!-- NgView -->
+            <div ng-view></div>
+            <!-- !NgView -->
+
+        </div>
+    </div>
+    <!-- !Body App -->
+
+    <!-- Include Bower Javascript components files -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
@@ -25,21 +40,26 @@
     <script src="bower_components/spin.js/spin.js"></script>
     <script src="bower_components/angular-spinner/angular-spinner.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/clone.js/clone.js"></script>
+    <!-- !Bower Javascript -->
 
+    <!-- Incluce main Javascript Application -->
     <script src="app.js"></script>
+    <!-- !Javascript -->
+
+    <!-- Include our Javascript services -->
     <script src="app-services/authentication.service.js"></script>
+    <script src="app-services/response.model.js"></script>
     <script src="app-services/flash.service.js"></script>
+    <script src="app-services/user.service.js"></script>
+    <!-- !Javascript -->
 
-    <!-- Real user service that uses an api -->
-    <!-- <script src="app-services/user.service.js"></script> -->
-
-    <!-- Fake user service for demo that uses local storage -->
-    <script src="app-services/user.service.local-storage.js"></script>
-
+    <!-- Include our Javascript Controller -->
     <script src="menu/menu.controller.js"></script>
     <script src="home/home.controller.js"></script>
     <script src="login/login.controller.js"></script>
     <script src="forget/forget.controller.js"></script>
     <script src="notFound/notFound.controller.js"></script>
+    <!-- !Javascript -->
 </body>
 </html>
