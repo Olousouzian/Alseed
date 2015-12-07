@@ -27,7 +27,7 @@
                     if (!flash.keepAfterLocationChange) {
                         delete $rootScope.flash;
                     } else {
-                        // only keep for a single location change
+                        // Only keep for a single location change
                         flash.keepAfterLocationChange = false;
                     }
                 }

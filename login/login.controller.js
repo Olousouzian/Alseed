@@ -21,6 +21,7 @@
             AuthenticationService.Login(vm.username, vm.password, function (response) {
 
                 if (response.success) {
+                    // Save this parameters for this instance
                     AuthenticationService.SetCredentials(vm.username, vm.password, response.data.idUser);
                     $location.path('/');
                 } else {
