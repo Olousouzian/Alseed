@@ -2,23 +2,21 @@
 <html ng-app="app">
 <head>
     <meta charset="utf-8" />
-    <title>AngularJS User Registration and Login Example</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <title>AngularJS Login Seed</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    
     <link href="app-content/app.css" rel="stylesheet" />
 </head>
 <body>
-
-    <div class="jumbotron">
+    <div ng-if="menuAvalaible" ng-include="'menu/menu.view.html'"></div>
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">
                 <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
                 <div ng-view></div>
             </div>
         </div>
-    </div>
-    <div class="credits text-center">
-        <!-- Useless Here -->
-    </div>
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
@@ -26,6 +24,7 @@
     <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
     <script src="bower_components/spin.js/spin.js"></script>
     <script src="bower_components/angular-spinner/angular-spinner.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="app.js"></script>
     <script src="app-services/authentication.service.js"></script>
@@ -37,8 +36,10 @@
     <!-- Fake user service for demo that uses local storage -->
     <script src="app-services/user.service.local-storage.js"></script>
 
+    <script src="menu/menu.controller.js"></script>
     <script src="home/home.controller.js"></script>
     <script src="login/login.controller.js"></script>
     <script src="forget/forget.controller.js"></script>
+    <script src="notFound/notFound.controller.js"></script>
 </body>
 </html>

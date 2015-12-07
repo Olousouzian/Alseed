@@ -3,10 +3,10 @@
     <form name="form" ng-submit="vm.forget()" role="form">
         <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
 
-            <p>Un email vous sera envoyer vous indicant votre nouveau mot de passe.</p>
-            <label for="username">Identifiant ou mot de passe</label>
-            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-            <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+            <p>Un email vous sera envoyé vous indicant votre nouveau mot de passe.</p>
+            <label for="username">Identifiant</label>
+            <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
+            <span ng-show="form.username.$dirty && form.firstName.$error.required" class="help-block">Identifiant obligatoire</span>
         </div>
         <div class="form-actions">
             <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Envoyer</button>

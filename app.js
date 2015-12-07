@@ -9,6 +9,7 @@
     config.$inject = ['$routeProvider', '$locationProvider'];
     function config($routeProvider, $locationProvider) {
         $routeProvider
+
             .when('/', {
                 controller: 'HomeController',
                 templateUrl: 'home/home.view.html',
@@ -27,7 +28,13 @@
                 controllerAs: 'vm'
             })
 
-            .otherwise({ redirectTo: '/login' });
+            .when('/not-found', {
+                controller: 'NotFoundController',
+                templateUrl: 'notFound/notFound.view.html',
+                controllerAs: 'vm'
+            })
+
+            .otherwise({ redirectTo: '/not-found' });
     }
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
@@ -41,6 +48,7 @@
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in and trying to access a restricted page
             var restrictedPage = $.inArray($location.path(), ['/login', '/forget']) === -1;
+            $rootScope.menuAvalaible = restrictedPage;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
                 $location.path('/login');
