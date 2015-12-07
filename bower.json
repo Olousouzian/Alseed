@@ -1,0 +1,22 @@
+{
+  "name": "ALoginSeed",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-cookies": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "angular-spinner": "~0.8.0",
+    "jquery": "jQuery#~2.1.4"
+  }
+}
