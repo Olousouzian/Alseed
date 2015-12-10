@@ -22,3 +22,7 @@ Now, read the code and use it !
 ## Notice 
 
 Why no Grunt, Gulp or Brunch ? Only because, it's a project seed, use what you want ! 
+
+## TODO
+
+-   Clear the cache data (services) at the logout action
