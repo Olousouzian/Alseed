@@ -11,6 +11,7 @@
 
         service.Login = Login;
         service.GetCurrentUser = GetCurrentUser;
+        service.Search = Search;
 
         // Local Storage
         var currentUser = undefined;
@@ -87,7 +88,42 @@
             */
 
             return deffered.promise;
-        }       
+        }  
+
+        function Search(expression) {
+            var deffered = $q.defer();
+
+            // WS Parameters
+            var route = '/api/users/search';
+            var params = { expression: expression }
+
+            /* Fake results */
+            var search = {
+                service: 'Utilisateurs',
+                results: [{
+                    url: '#/users/123',
+                    label: 'Fabien Olousouzian'
+                }, {
+                    url: '#/users/456',
+                    label: 'Laurent Pitteloud'
+                }, {
+                    url: '#/users/789',
+                    label: 'Alexis Quesnel'
+                }]
+            };
+            deffered.resolve(search);
+
+            /* Real WebServices
+            $http.get(route, params).then(
+                function(data){
+                    deffered.resolve(data);
+            },  function(status) {
+                deffered.reject(status);
+            });
+            */
+
+            return deffered.promise;
+        }     
     }
 
 })();
