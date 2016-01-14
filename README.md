@@ -1,6 +1,6 @@
 # Alseed
 
-What is Alseed ? Alseed is a simple project seed wich give to you a good structure for buid any AngularJS application.
+What is Alseed ? Alseed is a seed project which give to you a good structure for build an AngularJS application.
 
 ## How to install ?
 
@@ -17,12 +17,9 @@ $ bower install
 
 ## Work 
 
-Now, read the code and use it !
+Now, read/learn the code and use it !
 
-## Notice 
 
-Why no Grunt, Gulp or Brunch ? Only because, it's a project seed, use what you want ! 
+## Features
 
-## TODO
-
--   Clear the cache data (services) at the logout action
+// Write here many lines
