@@ -2,9 +2,6 @@
   <img src="http://i.imgur.com/gFaUB66.png" alt="Alseed_logo"/>
 </p>
 
-
-# Alseed
-
 What is Alseed ? Alseed is a seed project which give to you a good structure for build an AngularJS application.
 
 ## How to install ?
