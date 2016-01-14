@@ -1,0 +1,19 @@
+﻿div.col-md-6.col-md-offset-3
+
+    span(ng-if="vm.dataLoading", us-spinner)
+    h2.text-center Mot de passe oublié
+
+    form(name="form", ng-submit="vm.forget()", role="form")
+
+        div.form-group(ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }")
+
+            p Un email vient de vous être envoyé mentionnant votre nouveau mot de passe.
+
+            label(for="username") Identifiant
+
+            input#username.form-control(type="text", name="username", ng-model="vm.user.username" required)
+            span.help-block(ng-show="form.username.$dirty && form.username.$error.required") L'identifiant est obligatoire
+
+        div.form-actions
+            button.btn btn-primary(type="submit", ng-disabled="form.$invalid || vm.dataLoading") Envoyer
+            a.btn.btn-link(href="#/login") Annuler

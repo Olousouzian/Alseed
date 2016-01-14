@@ -1,0 +1,18 @@
+﻿div.col-md-6.col-md-offset-3
+    span(ng-if="vm.dataLoading", us-spinner)
+    h2.text-center {{ "Project X" | translate }}
+
+    form(name="form", ng-submit="vm.login()", role="form")
+        div.form-group(ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }")
+            label(for="username") {{ "Login" | translate }}
+            input#username.form-control(type="text", name="username", ng-model="vm.username", required)
+            span.help-block(ng-show="form.username.$dirty && form.username.$error.required") {{ "Login is required" | translate }}
+
+        div.form-group(ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }")
+            label(for="password") {{ "Password" | translate }}
+            input#password.form-control(type="password" name="password" ng-model="vm.password" required)
+            span(ng-show="form.password.$dirty && form.password.$error.required" class="help-block") {{ "Password is required" | translate }}
+
+        div.form-actions
+            button.btn.btn-primary(type="submit", ng-disabled="form.$invalid || vm.dataLoading") {{ "Log in" | translate }}
+            a.btn.btn-link(href="#/forget") {{ "Forgot password ?" | translate }}

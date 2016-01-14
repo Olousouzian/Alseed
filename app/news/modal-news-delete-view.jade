@@ -1,0 +1,11 @@
+div.modal.fade
+    div.modal-dialog
+        div.modal-content
+            div.modal-header
+                button.close(type="button", ng-click="close(false)", data-dismiss="modal", aria-hidden="true") &times;
+                h4.modal-title Supprimer ?
+            div.modal-body
+                p Souhaitez-vous vraiment supprimer cette actualité ?
+            div.modal-footer
+                button.btn.btn-default(type="button", ng-click="close(false)", data-dismiss="modal") No
+                button.btn.btn-primary(type="button", ng-click="close(true)", data-dismiss="modal") Yes

@@ -1,0 +1,36 @@
+h1 {{ "Ajouter une actualité" | translate }}
+
+p.form-group
+    label(for="active") {{ "Activée :" | translate }}
+    input#active(bs-switch, ng-model="vm.news.active", type="checkbox", switch-on-text="Oui", switch-off-text="Non")
+
+div.row
+    div.col-md-6
+        div.form-group
+            label(for="publish_start") {{ "Date début de publication :" | translate }}
+            p.input-group
+                input.form-control(type="text", uib-datepicker-popup="{{ vm.format }}", ng-model="vm.news.publish_start", ng-model-options="vm.modelOptions", is-open="vm.popup_publish_start.opened", min-date="vm.today", datepicker-options="vm.dateOptions", ng-required="true", close-text="Close")
+                span.input-group-btn
+                    button.btn.btn-default(type="button", ng-click="vm.open_popup_publish_start()")
+                        i.glyphicon.glyphicon-calendar
+    div.col-md-6
+        div.form-group
+            label(for="publish_end") {{ "Date fin de publication :" | translate }}
+            p.input-group
+                input#publish_end.form-control(type="text", uib-datepicker-popup="{{ vm.format }}", ng-model="vm.news.publish_end", ng-model-options="vm.modelOptions", is-open="vm.popup_publish_end.opened", min-date="vm.news.publish_start", datepicker-options="vm.dateOptions", ng-required="false", close-text="Close")
+                span.input-group-btn
+                    button.btn.btn-default(type="button", ng-click="vm.open_popup_publish_end()")
+                        i.glyphicon.glyphicon-calendar
+
+div.form-group
+    label(for="title") {{ "Titre :" | translate }}
+    input#title.form-control(type="text", ng-model="news.title", ng-required="true")
+div.form-group
+    label(for="excerpt") {{ "Entête :" | translate }}
+    textarea#excerpt.form-control(ng-model="vm.news.excerpt")
+div.form-group
+    label(for="content") {{ "Contenu :" | translate }}
+    div#content(text-angular, ng-model="vm.news.content", ng-required="true")
+
+a.btn.btn-default(href="#/news") {{ "Annuler" | translate }}
+a.btn.btn-success(ng-click="vm.add()") {{ "Enregistrer" | translate }}

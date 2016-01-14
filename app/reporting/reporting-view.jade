@@ -1,0 +1,28 @@
+div.row
+    div.col-xs-12.col-sm-6(style="background-color:orange;") Les inscriptions
+       div.row
+            div.col-xs-12.col-sm-6(style="background-color:orange;height:100px;") {{ vm.usersTotal }} Utilisateurs inscrit au total
+            div.col-xs-12.col-sm-6(style="background-color:orange;height:100px;") {{ vm.usersMonth }} Utilisateurs  inscrit ce mois
+       div.row
+            div.col-xs-12.col-sm-6(style="background-color:orange;height:100px;") {{ vm.salon }} Salons inscrits
+            div.col-xs-12.col-sm-6(style="background-color:orange;height:100px;") {{ vm.salonEli }}Salons éligibles
+    div.col-xs-12.col-sm-6(style="background-color:green;height:220px;") Les utilisation
+        div.row
+            div.col-xs-12.col-sm-6(style="background-color:green;height:100px;") {{ vm.quizByUser }} Quiz complétés par utilisateur, en moyenne
+            div.col-xs-12.col-sm-6(style="background-color:green;height:100px;") {{ vm.quizBySalon }} Quiz complétés par salon, en moyenne
+
+div.row
+    div.col-xs-12.col-sm-6(style="background-color:orange;") Les ventes
+        div.row
+            div.col-xs-12.col-sm-6(style="background-color:orange;height:100px;") {{ vm.vente }} Ventes déclarées
+            div.col-xs-12.col-sm-6(style="background-color:orange;height:100px;") {{ vm.venteMonth }} Ventes déclarées ce mois
+        div.row
+            div.col-xs-12.col-sm-6(style="background-color:orange;height:100px;") {{ vm.venteByUser }}Ventes déclarées par utilisateur, en moyenne
+            div.col-xs-12.col-sm-6(style="background-color:orange;height:100px;") {{ vm.venteBySalon }} Ventes déclarées par salon, en moyenne
+    div.col-xs-12.col-sm-6(style="background-color:green;") Les points et commandes
+         div.row
+            div.col-xs-12.col-sm-6(style="background-color:green;height:100px;") {{ vm.pointUsers }}Points versés sur les comptes utilisateurs
+            div.col-xs-12.col-sm-6(style="background-color:green;height:100px;") {{ vm.pointSalon }} Points disponibles sur les comptes salons
+         div.row
+            div.col-xs-12.col-sm-6(style="background-color:green;height:100px;") {{ vm.pointUsing }} Points dépensés
+            div.col-xs-12.col-sm-6(style="background-color:green;height:100px;") {{ vm.present }} Cadeaux commandes

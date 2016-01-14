@@ -1,0 +1,20 @@
+div.modal.fade
+    div.modal-dialog.modal-lg
+        div.modal-content
+            div.modal-header
+                button.close(type="button", ng-click="closeComplex(false)", data-dismiss="modal", aria-hidden="true") &times;
+                h4.modal-title {{ title }}
+            div.modal-body
+                p Here's a more complex modal, it contains a form, data is passed to the controller and data is returned from the modal.
+                form.form-horizontal
+                    div.form-group
+                        label.cpm-sm-2.control-label(for="name") Name
+                        div.col-sm-10
+                            input.form-control#name(type="text", placeholder="Your Name", ng-model="name")
+                    div.form-group
+                        label.col-sm-2 control-label(for="age") Age
+                        div.col-sm-10
+                            input.form-control#inputPassword3(type="number", placeholder="Age", ng-model="age")
+            div.modal-footer
+                button.btn(type="button", ng-click="closeComplex(false)") {{ cancelButton }}
+                button.btn.btn-primary(type="button", ng-click="closeComplex()", data-dismiss="modal") {{ submitButton }}

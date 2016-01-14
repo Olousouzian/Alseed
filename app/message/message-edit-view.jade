@@ -1,0 +1,16 @@
+h1 {{ "Editer un message" | translate }}
+
+div(ng-if="vm.isLoaded")
+    p.form-group
+        label(for="active") {{ "Envoyé un push :" | translate }}
+        input#active(bs-switch, ng-model="vm.msg.active", type="checkbox", switch-on-text="Oui", switch-off-text="Non")
+
+    input#title.form-control(type="text", value="{{ vm.message.title }}", ng-required="true")
+
+    p.form-group
+        label(for="content") {{ "texte :" | translate }}
+        input#title.form-control(type="text", value="{{ vm.message.name }}", ng-required="true")
+
+    a.btn.btn-danger.pull-right(ng-click="vm.delete()") {{ "Supprimer" | translate }}
+    a.btn.btn-default(href="#/message") {{ "Retour" | translate }}
+    a.btn.btn-success(ng-click="vm.update()") {{ "Enregistrer" | translate }}

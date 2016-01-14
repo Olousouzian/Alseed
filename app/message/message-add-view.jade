@@ -1,0 +1,12 @@
+h1 {{ "Ajouter un message" | translate }}
+p.form-group
+    label(for="active") {{ "Envoyé un push :" | translate }}
+    input#active(bs-switch, ng-model="vm.message.active", type="checkbox", switch-on-text="Oui", switch-off-text="Non")
+p Ajouter un titre
+    input#title.form-control(type="text", ng-model="vm.message.title", ng-required="true")
+p.form-group
+    label(for="content") {{ "texte :" | translate }}
+    input#title.form-control(type="text", ng-model="vm.message.text", ng-required="true")
+
+a.btn.btn-default(href="#/message") {{ "Annuler" | translate }}
+a.btn.btn-success(ng-click="vm.add()") {{ "Enregistrer" | translate }}

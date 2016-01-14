@@ -1,0 +1,157 @@
+(function () {
+    'use strict';
+    angular.module('app.news', []);
+    angular
+        .module('app.news')
+        .factory('NewsService', NewsService);
+
+    NewsService.$inject = ['$q', 'RequestService', '$http'];
+    function NewsService($q, RequestService, $http) {
+        var service = {};
+
+        service.GetAll = GetAll;
+        service.GetOne = GetOne;
+        service.Add = Add;
+        service.Update = Update;
+        service.Delete = Delete;
+        service.Search = Search;
+
+        return service;
+
+        // Public functions
+        function GetAll(){
+            var deffered = $q.defer();
+            var route = '/news/allNews';
+            var params = {offset : "10",
+                fileLength : "10"
+            };
+            var deffered = $q.defer();
+            $http.get(route, params).then(function(data) {
+                var success = Object.clone(SuccessResponse);
+                success.data = data.data;
+                deffered.resolve(success);
+            });
+
+
+
+            return deffered.promise;
+        }
+
+        function GetOne(id) {
+            var deffered = $q.defer();
+
+            /* Fake results */
+            GetAll().then(function(response) {
+                if (response.success === true) {
+                    for (var i=0; i < response.data.length; i++) {
+                        if (Number(response.data[i].id) === Number(id)) {
+                            var success = Object.clone(SuccessResponse);
+                            success.data = response.data[i];
+                            deffered.resolve(success);
+                            break;
+                        }
+                    }
+                } else {
+                    var error = Object.clone(ErrorResponse);
+                    deffered.reject(error);
+                }
+            });
+
+            /* Real WS */
+            /*var route = '/api/news/' + id;
+            RequestService.Get(route, {}).then(function(response) {
+                deffered.resolve(response);
+            });*/
+
+            return deffered.promise;
+        }
+
+        function Add(news) {
+            var deffered = $q.defer();
+            var route = '/news/addNews';
+            var params = {news : news};
+            $http.post(route, params).then(function(data) {
+                var success = Object.clone(SuccessResponse);
+                success.data = data.data[0];
+                deffered.resolve(success);
+            });
+            return deffered.promise;
+        }
+
+        function Update(news) {
+            var deffered = $q.defer();
+
+            var route = '/news/updateNews';
+            var params = {news : news};
+            $http.post(route, params).then(function(data) {
+                var success = Object.clone(SuccessResponse);
+                deffered.resolve(success);
+            });
+
+            return deffered.promise;
+        }
+
+        function Delete(id) {
+            var deffered = $q.defer();
+
+            if (angular.isUndefined(id) === true) {
+                var error = Object.clone(ErrorResponse);
+                error.message = 'NewsService.Delete : Missing id';
+                deffered.reject(error);
+            } else {
+                var route = '/news/deleteNews';
+                var params = {id : id};
+                $http.post(route, params).then(function(data) {
+                    var success = Object.clone(SuccessResponse);
+                    deffered.resolve(success);
+                });
+            }
+
+            return deffered.promise;
+        }
+
+        function Search(expression, options) {
+            var deffered = $q.defer();
+
+            /* Fake results */
+            GetAll().then(function(response) {
+                if (response.success === true) {
+                    var results = [];
+                    angular.forEach(response.data, function(result, id) {
+                        results.push({
+                            label: result.title,
+                            url: '#/news/' + result.id
+                        });
+                    });
+
+                    var search = Object.clone(SearchResponse);
+                    search.service = 'Actu Marque';
+                    search.results = results;
+
+                    var success = Object.clone(SuccessResponse);
+                    success.data = search; 
+                    
+                    deffered.resolve(success);
+                } else {
+                    var error = Object.clone(ErrorResponse);
+                    deffered.reject(error);
+                }
+            });
+
+            /* Real WebServices
+            // WS Parameters
+            var route = '/api/users/search';
+            var params = { expression: expression, length: options.length, offset: options.offset }
+
+            $http.get(route, params).then(
+                function(data){
+                    deffered.resolve(data);
+            }, function(status) {
+                deffered.reject(status);
+            });
+            */
+
+            return deffered.promise;
+        }
+    }
+})();
