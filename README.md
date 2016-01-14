@@ -27,4 +27,21 @@ Now, read/learn the code and use it !
 
 ## Features
 
-// Write here many lines
+- Language Template Engine
+- Media Library (Wordpress Style)
+- Search Engine
+
+
+## Services
+
+- Authentification
+- Cache
+- Flash
+- Image
+- News
+- Media
+- Push
+- Upload
+- User
+- Modal
+- Confirmation
