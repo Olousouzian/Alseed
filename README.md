@@ -1,6 +1,4 @@
-# Alseed
-
-What is Alseed ? Alseed is a simple project seed wich give to you a good structure for buid any AngularJS application.
+# MyDPP Backoffice
 
 ## How to install ?
 
@@ -9,20 +7,19 @@ Clone this repository
 $ git clone <this-repository>
 ```
 
-Then install Bower dependencies
+Then install NPM and Bower dependencies
 
 ```sh
-$ bower install 
+$ npm install
+$ bower install
 ```
 
 ## Work 
 
-Now, read the code and use it !
+This project uses brunch to copy assets and compile css+js. It also generates html files from jade template.
 
-## Notice 
+Copy assets and compile source files :
 
-Why no Grunt, Gulp or Brunch ? Only because, it's a project seed, use what you want ! 
-
-## TODO
-
--   Clear the cache data (services) at the logout action
+```sh
+$ brunch b
+```
