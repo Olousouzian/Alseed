@@ -5,24 +5,18 @@
         .module('app')
         .controller('ForgetController', ForgetController);
 
-    ForgetController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
-    function ForgetController(UserService, $location, $rootScope, FlashService) {
+    ForgetController.$inject = ['$location', '$timeout', 'FlashService'];
+    function ForgetController($location, $timeout, FlashService) {
         var vm = this;
         vm.forget = forget;
 
         function forget() {
             vm.dataLoading = true;
-            UserService.Create(vm.user)
-                .then(function (response) {
-                    if (response.success) {
-                        FlashService.Success('Un e-mail vous a été envoyé.', true);
-                        $location.path('/login');
-                    }
-                    else {
-                        FlashService.Error(response.message);
-                        vm.dataLoading = false;
-                    }
-                });
+            
+            $timeout(function() {
+                FlashService.Success('An email has been sent. Check your inbox.', true);
+                $location.path('/login');
+            }, 1500);
         }
     }
 

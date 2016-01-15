@@ -5,10 +5,7 @@
 
     form(name="form", ng-submit="vm.forget()", role="form")
 
-        div.form-group(ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }")
-
-            p {{ "Mail has been sending to your address mail." | translate }}
-
+        div.form-group
             label(for="username") {{ "Login" | translate }}
 
             input#username.form-control(type="text", name="username", ng-model="vm.user.username" required)
