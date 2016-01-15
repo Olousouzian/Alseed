@@ -48,6 +48,6 @@
                             span.caret
                         ul.dropdown-menu
                             li(ng-repeat="language in languages")
-                                a(href="#/", ng-class="{ 'active': language.code == currentLanguage }", mydpp-language="{{ language.code }}") {{ language.label | translate }}
+                                a(href="#/", ng-class="{ 'active': language.code == currentLanguage }", alseed-language="{{ language.code }}") {{ language.label | translate }}
                     li
                         a.btn(href="#/login") {{ "Log out" | translate }}

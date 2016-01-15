@@ -8,7 +8,7 @@ div(ng-if="vm.isLoaded")
 
     p.form-group
         label(for="active") {{ "News :" | translate }}
-        input#active(bs-switch, ng-model="vm.news.active", type="radio", switch-active="{{ vm.news.active }}", switch-on-text="Oui", switch-off-text="Non")
+        input#active(bs-switch, ng-model="vm.news.active", type="checkbox", switch-on-text="Oui", switch-off-text="Non")
     p.form-froup
         label(for="excerpt") {{ "Header :" | translate }}
         div#excerpt(text-angular, ng-model="vm.news.excerpt")

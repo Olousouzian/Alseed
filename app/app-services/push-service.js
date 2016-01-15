@@ -5,7 +5,7 @@
         .module('app.push')
         .factory('PushService', PushService);
 
-    PushService.$inject = ['$q'];
+    PushService.$inject = ['$q', '$http'];
     function PushService($q) {
         var service = {};
 

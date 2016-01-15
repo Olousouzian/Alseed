@@ -14,7 +14,7 @@
     "test": "karma start --browsers PhantomJS --single-run --reporters junit,dots",
     "test-watch": "karma start --browsers PhantomJS",
     "coverage": "karma start --browsers PhantomJS --single-run --reporters coverage,dots",
-    "package": "zip -r mydpp-backoffice-$npm_package_version.zip public/*"
+    "package": "zip -r alseed-$npm_package_version.zip public/*"
   },
   "devDependencies": {
     "css-brunch": "^1.7.0",
