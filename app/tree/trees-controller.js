@@ -3,16 +3,14 @@
 
     angular
         .module('app')
-        .controller('TreeController', TreeController);
+        .controller('TreesController', TreesController);
 
-    TreeController.$inject = ['$scope', 'FlashService', 'TreeService'];
-    function TreeController($scope, FlashService, TreeService) {
+    TreesController.$inject = ['$rootScope', '$scope', 'FlashService', 'TreeService'];
+    function TreesController($rootScope, $scope, FlashService, TreeService) {
         var vm = this;
-
         vm.trees = {};
         vm.treesAsJson = {};
         vm.isLoaded = false;
-
         initController();
 
         // Private functions

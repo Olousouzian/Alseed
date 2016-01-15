@@ -1,8 +1,8 @@
 (function () {
     'use strict';
-    angular.module('app.tree', []);
+    angular.module('app.trees', []);
     angular
-        .module('app.tree')
+        .module('app.trees')
         .factory('TreeService', TreeService);
 
     TreeService.$inject = ['$q', '$http'];
@@ -17,7 +17,7 @@
         // Public functions
         function GetTree() {
             var deffered = $q.defer();
-            var route = '/tree/getTree';
+            var route = '/trees/getTree';
             var params = {};
             $http.get(route, params).then(function(data) {
                 var response = Object.clone(SuccessResponse);

@@ -17,7 +17,7 @@
             'app.cache',
             'app.flash',
             'app.image',
-            'app.tree',
+            'app.trees',
             'app.message',
             'app.news',
             'app.navigation',
@@ -111,7 +111,7 @@
             })
 
             .when('/tree', {
-                controller: 'TreeController',
+                controller: 'TreesController',
                 templateUrl: 'tree/tree-view.html',
                 controllerAs: 'vm'
             })
@@ -202,7 +202,7 @@
                 }
             ]
         };
-        var trees = [
+        var treesInfo = [
             {
                 "id": 1,
                 "label": "Quizzes",
@@ -366,8 +366,8 @@
         $httpBackend.whenGET("/media/searchMedia").respond(search);
         $httpBackend.expect("GET", "/media/deleteMedia");
         $httpBackend.whenGET("/media/deleteMedia").respond("fichier supprimer avec succées");
-        $httpBackend.expect("GET", "/tree/getTree");
-        $httpBackend.whenGET("/tree/getTree").respond(trees);
+        $httpBackend.expect("GET", "/trees/getTree");
+        $httpBackend.whenGET("/trees/getTree").respond(treesInfo);
         $httpBackend.expect("GET", "/message/allMessage");
         $httpBackend.whenGET("/message/allMessage").respond(msg);
         $httpBackend.expect("POST", "/message/updateMessage");
