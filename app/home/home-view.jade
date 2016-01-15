@@ -1,2 +1,10 @@
-﻿h1 {{ "Hello %1s %2s !" | translate:[vm.user.firstname,vm.user.lastname] }}
-p {{ "Welcome" | translate }}
+﻿p.text-center 
+    img.img-rounded(src="/images/logo.png")
+
+h3.text-center {{ "What is Alseed ?" | translate }}
+
+p.text-center {{ "Alseed is a seed project which give to you a good structure for build an AngularJS application." | translate }}
+
+br
+p.text-center
+    a.btn.btn-primary.btn-lg(href="https://github.com/Olousouzian/Alseed", role="button") {{ "Fork project on GitHub" | translate }}
