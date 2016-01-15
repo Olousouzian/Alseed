@@ -18,10 +18,10 @@
                 modal.element.modal();
                 modal.close.then(function(result) {
                     if (result) {
-                        FlashService.Success('Vous avez choisi "Yes"');
+                        FlashService.Success('You choose "Yes"');
                     }
                     else {
-                        FlashService.Error('Vous avez choisi "No"');
+                        FlashService.Error('You choose "No"');
                     }
                 });
             }).catch(function(error) {
@@ -44,10 +44,10 @@
                 modal.element.modal();
                 modal.close.then(function(result) {
                     if (result) {
-                        FlashService.Success('Vous avez validé le formulaire avec les informations suivantes : name = ' + result.name + ', age = ' + result.age);
+                        FlashService.Success('image has been select');
                     }
                     else {
-                        FlashService.Error('Vous avez fermé la modal');
+                        FlashService.Error('You close modal');
                     }
                 });
             }).catch(function(error) {
@@ -70,10 +70,10 @@
                 modal.element.modal();
                 modal.close.then(function(result) {
                     if (result) {
-                        FlashService.Success('Vous avez validé le formulaire avec les informations suivantes : name = ' + result.name + ', age = ' + result.age);
+                        FlashService.Success('You validate modal with info : name = ' + result.name + ', age = ' + result.age);
                     }
                     else {
-                        FlashService.Error('Vous avez fermé la modal');
+                        FlashService.Error('You close modal');
                     }
                 });
             }).catch(function(error) {

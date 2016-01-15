@@ -19,5 +19,6 @@ div(ui-tree)
                             input(type="submit", value="Valider", ng-click="vm.updateItem(item)")
 
 p
-    input(type="submit", value='{{ "Save" | translate }}', ng-click="vm.saveItems()")
-
+    a.btn.btn-primary(ng-click="vm.saveItems()")
+        span.glyphicon.glyphicon-floppy-save
+            {{ "Save" | translate }}

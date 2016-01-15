@@ -53,3 +53,11 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+.relative{
+    position : relative !important;
+}
+.absolute-bottom-right{
+    position : absolute !important;
+    bottom : 0;
+    right : 0;
+}

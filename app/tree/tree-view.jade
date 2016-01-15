@@ -31,4 +31,6 @@ div(ui-tree)
         li(ng-repeat="item in vm.trees", ui-tree-node, ng-include="'nodes_renderer.html'")
 
 p
-    input(type="submit", value="Save", ng-click="vm.saveItems()")
+    a.btn.btn-primary(ng-click="vm.saveItems()")
+        span.glyphicon.glyphicon-floppy-save
+             {{ "Save" | translate }}

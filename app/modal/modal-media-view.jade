@@ -3,16 +3,18 @@ div.modal.fade
         div.modal-content
             div.modal-header
                 button.close(type="button", ng-click="closeComplex(false)", data-dismiss="modal", aria-hidden="true") &times;
-                div.button.upload(ngf-select="UploadFile($file)") +
                 h4.modal-title {{ title }}
             div.modal-body.test114
+                a.btn.btn-primary.pull-right(ngf-select="UploadFile($file)")
+                    span.glyphicon.glyphicon-upload
                 p Search by name:
                 input(type="text",ng-model="searchMedia" ng-change="Search()")
                 div(infinite-scroll-container="'.test114'", infinite-scroll="LoadMore()", infinite-scroll-distance="3")
                     div.actu(ng-repeat="media in Medias  track by $index ")
-                        div.actu(ng-repeat="file in media  track by $index ")
+                        div.actu.relative(ng-repeat="file in media  track by $index ")
                             img(ng-src="{{ file.url }}", ng-click="select(file)", alt="{{ file.name }}", style="width:150px; height:150px;")
-                            img(ng-src="upload/editer.png", ng-click="showDetailsModal(file)", style="width:16px; height:16px;")
+                            a.btn.btn-success.btn-xs.absolute-bottom-right(ng-click="showDetailsModal(file)")
+                                    span.glyphicon.glyphicon-edit
             div.modal-footer
                 button.btn(type="button", ng-click="closeComplex(false)", data-dismiss="modal") {{ cancelButton }}
                 button.btn.btn-primary(type="button", ng-click="closeComplex(false)", data-dismiss="modal") {{ submitButton }}
