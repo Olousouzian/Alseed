@@ -44,7 +44,7 @@
                     li
                         a(href="#/reporting") {{ "reporting" | translate }}
                     li.dropdown
-                        a.dropdown-toggle(href="#/", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false") {{ "Language" | translate }}
+                        a.dropdown-toggle(data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false") {{ "Language" | translate }}
                             span.caret
                         ul.dropdown-menu
                             li(ng-repeat="language in languages")
