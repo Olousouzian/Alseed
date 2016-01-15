@@ -8,8 +8,13 @@ What is Alseed ? Alseed is a seed project which give to you a good structure for
 
 Clone this repository
 ```sh
-$ git clone <this-repository>
+$ git clone git@github.com:Olousouzian/Alseed.git
 ```
+or
+```sh
+$ git clone https://github.com/Olousouzian/Alseed.git
+```
+
 
 Then install Bower dependencies
 
