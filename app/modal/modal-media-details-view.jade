@@ -9,12 +9,12 @@ div.modal.fade#modal-detail
                     div.col-xs-7
                         img(ng-src="{{ file.url }}")
                     div.col-xs-5
-                        h5 {{ "Détails du fichier :" | translate }}
+                        h5 {{ "Details file :" | translate }}
                         div.form-group
-                            span.label {{ "Nom :" | translate }} 
+                            span.label {{ "Name :" | translate }}
                             span.value {{ file.name }}
                         div.form-group
-                            span.label {{ "Taille :" | translate }}
+                            span.label {{ "Size :" | translate }}
                             span.value {{ file.weight | bytes }}
                         div.form-group(ng-if="file.type == 'image'")
                             span.label {{ "Dimensions :" | translate }}

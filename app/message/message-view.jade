@@ -1,9 +1,9 @@
-h1 Timeline
+h1 {{ "Timeline" | translate }}
 a.pull-right.btn.btn-primary.btn.xs(href="#/message/add")
         span.glyphicon.glyphicon-plus
-p Search by date:
+p {{ "Search by date : " | translate }}
 input(type="text",ng-model="searchDate")
-p Search by name:
+p {{ "Search by name : " | translate }}
 input(type="text",ng-model="searchMessage")
 table(md-table, md-row-select, ng-model="selected", md-progress="promise")
     thead(md-head)

@@ -5,7 +5,7 @@ div.modal.fade
                 button.close(type="button", ng-click="closeComplex(false)", data-dismiss="modal", aria-hidden="true") &times;
                 h4.modal-title {{ title }}
             div.modal-body
-                p Here's a more complex modal, it contains a form, data is passed to the controller and data is returned from the modal.
+                p {{ "Here's a more complex modal, it contains a form, data is passed to the controller and data is returned from the modal." | translate }}
                 form.form-horizontal
                     div.form-group
                         label.cpm-sm-2.control-label(for="name") Name

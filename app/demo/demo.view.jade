@@ -1,12 +1,12 @@
-h1 Demo Page!
-p Bienvenue sur la page de démo
+h1 {{ "Demo page!" | translate }}
+p {{ "Welcome on demo page" | translate }}
 div.row
     button#buttonTheme {{ "Set theme to blue" | translate }}
     button#buttonTheme1 {{ "Set theme to red" | translate }}
     div.button(ngf-select="vm.uploadFile($file)") {{ "Upload on file select" | translate }}
     div.drop-box(ngf-drop="vm.uploadFile($file)",ngf-drag-over-class="dragover",ngf-multiple="true",ngf-pattern="image/*,application/pdf") {{ "Drop Images or PDFs files here" | translate }}
     div(ngf-no-file-drop) {{ "File Drag/Drop is not supported for this browser" | translate }}
-    a.btn.btn-default.btn-lg(href="", ng-click="vm.showSimpleModal()") Show simple modal
-    a.btn.btn-default.btn-lg(href="", ng-click="vm.showMediaModal()") Show media modal
-    a.btn.btn-default.btn-lg(href="", ng-click="vm.showComplexModal()") Show complex modal
+    a.btn.btn-default.btn-lg(href="", ng-click="vm.showSimpleModal()") {{ "Show simple modal" | translate }}
+    a.btn.btn-default.btn-lg(href="", ng-click="vm.showMediaModal()") {{ "Show media modal" | translate }}
+    a.btn.btn-default.btn-lg(href="", ng-click="vm.showComplexModal()") {{ "Show complex modal" | translate }}
 

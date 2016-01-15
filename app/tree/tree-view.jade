@@ -1,5 +1,5 @@
-h1 Tree
-p Cette page vous permet de gérer les rubriques de la catégorie "Trees" ainsi que leur ordrer et libellé.
+h1 {{ "Tree" | translate }}
+p {{ "This page allows you to manage the items in the category \"Trees\" and their ordrer and wording ." | translate }}
 
 script(type="text/ng-template", id="nodes_renderer.html")
     div(ui-tree-handle)
@@ -17,7 +17,7 @@ script(type="text/ng-template", id="nodes_renderer.html")
                         span.glyphicon.glyphicon-pencil
             div.panel-collapse.collapse(ng-class="{'in': item.editing}")
                 div.panel-body
-                    p Modifier le label de l'élément
+                    p {{ "Edit label element" | translate }}
                     p
                         input(type="text", ng-model="item.temp")
                     p.warning(ng-if="item.error") {{ item.error }}
@@ -31,4 +31,4 @@ div(ui-tree)
         li(ng-repeat="item in vm.trees", ui-tree-node, ng-include="'nodes_renderer.html'")
 
 p
-    input(type="submit", value="Enregistrer", ng-click="vm.saveItems()")
+    input(type="submit", value="Save", ng-click="vm.saveItems()")

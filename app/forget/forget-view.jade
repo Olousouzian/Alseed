@@ -1,19 +1,19 @@
 ﻿div.col-md-6.col-md-offset-3
 
     span(ng-if="vm.dataLoading", us-spinner)
-    h2.text-center Mot de passe oublié
+    h2.text-center {{ "forgot password" | translate }}
 
     form(name="form", ng-submit="vm.forget()", role="form")
 
         div.form-group(ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }")
 
-            p Un email vient de vous être envoyé mentionnant votre nouveau mot de passe.
+            p {{ "Mail has been sending to your address mail." | translate }}
 
-            label(for="username") Identifiant
+            label(for="username") {{ "Login" | translate }}
 
             input#username.form-control(type="text", name="username", ng-model="vm.user.username" required)
-            span.help-block(ng-show="form.username.$dirty && form.username.$error.required") L'identifiant est obligatoire
+            span.help-block(ng-show="form.username.$dirty && form.username.$error.required") {{ "Login needed" | translate }}
 
         div.form-actions
-            button.btn btn-primary(type="submit", ng-disabled="form.$invalid || vm.dataLoading") Envoyer
-            a.btn.btn-link(href="#/login") Annuler
+            button.btn.btn-primary(type="submit", ng-disabled="form.$invalid || vm.dataLoading") {{ "Send" | translate }}
+            a.btn.btn-link(href="#/login") {{ "Cancel" | translate }}

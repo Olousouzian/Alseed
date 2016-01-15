@@ -1,4 +1,4 @@
-h1 {{ "Gestionnaire d'articles" | translate }}
+h1 {{ "Articles manager" | translate }}
 
 p {{ "Search by title :" | translate }}
 
@@ -16,8 +16,8 @@ div.list-group(infinite-scroll="vm.loadMore()", infinite-scroll-distance="2")
                 span.glyphicon.glyphicon-pencil
         p.small.text-primary
             span.label(ng-class="{'label-success': item.active, 'label-danger': !item.active}") {{ item.active ? 'active' : 'inactive' }}
-            span  {{ "Créée le :" | translate }} {{ item.created_at * 1000 | date:'dd/MM/yyyy HH:mm':'UTC' }} 
-            span.text-success(ng-if="item.created_at != item.updated_at") {{ "Mise à jour le :"}} {{ item.updated_at * 1000 | date:'dd/MM/yyyy HH:mm':'UTC' }}
-        p.small.text-primary {{ "Début de publication:" | translate }} {{ item.publish_start * 1000 | date:'dd/MM/yyyy HH:mm':'UTC' }} 
-            span.text-danger(ng-if="item.publish_end") {{ "Fin de publication :"}} {{ item.publish_end * 1000 | date:'dd/MM/yyyy HH:mm':'UTC' }}
+            span  {{ "Create :" | translate }} {{ item.created_at * 1000 | date:'dd/MM/yyyy HH:mm':'UTC' }}
+            span.text-success(ng-if="item.created_at != item.updated_at") {{ "Update on :"}} {{ item.updated_at * 1000 | date:'dd/MM/yyyy HH:mm':'UTC' }}
+        p.small.text-primary {{ "Start publication:" | translate }} {{ item.publish_start * 1000 | date:'dd/MM/yyyy HH:mm':'UTC' }}
+            span.text-danger(ng-if="item.publish_end") {{ "End publication :"}} {{ item.publish_end * 1000 | date:'dd/MM/yyyy HH:mm':'UTC' }}
         p.list-group-item-text {{ item.content }}

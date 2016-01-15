@@ -37,8 +37,7 @@ exports.config =
                     'bower_components/ng-file-upload/ng-file-upload.js'
                     'bower_components/ng-file-upload/ng-file-upload-shim.js',
                     'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
-                    'bower_components/angular-modal-service/dst/angular-modal-service.js',
-                    'bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js'
+                    'bower_components/angular-modal-service/dst/angular-modal-service.js'
                 ]
         templates:
             joinTo: 
