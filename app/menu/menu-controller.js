@@ -30,6 +30,8 @@
         }
 
         $scope.search = function() {
+            $scope.resetSearch();
+
             SearchService.Search($scope.search_expression, {'services': ['UserService', 'NewsService'], 'length': '2', 'offset': '0'}).then(function(response) {
                 if (response.success === true && response.data.length > 0) {
                     angular.forEach(response.data, function(res, id) {
@@ -39,6 +41,10 @@
                     });
                 }
             });
+        }
+
+        $scope.resetSearch = function() {
+            $scope.results = [];
         }
     }
 })();
