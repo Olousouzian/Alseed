@@ -1,5 +1,11 @@
 ﻿(function () {
     'use strict';
+    /**
+     * @memberof app
+     * @ngdoc service
+     * @name AuthentificationService
+     * @description  Service which permit to login to set value in cookie and to clear value about user
+     */
     angular.module('app.auth', []);
     angular
         .module('app.auth')

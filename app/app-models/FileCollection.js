@@ -1,3 +1,9 @@
+/**
+ * @memberof app
+ * @ngdoc model
+ * @name FileCollection
+ * @description  object call AbstractCollection
+ */
 var FileCollection = function() {
     AbstractCollection.call(this);
 }

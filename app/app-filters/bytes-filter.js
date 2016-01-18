@@ -1,6 +1,13 @@
 (function(){
     'use strict';
-
+    /**
+     * @memberof app
+     * @ngdoc filter
+     * @name bytesFilter
+     * @param {int} bytes Bytes from file
+     * @description
+     * Permit to initialize bytes from file
+     */
     angular.module('app')
         .filter('bytes', bytesFilter);
 

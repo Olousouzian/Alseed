@@ -1,5 +1,43 @@
 ﻿(function () {
     'use strict';
+    /**
+     * @ngdoc controller
+     * @name app
+     * @param ngRoute manages route on app
+     * @param ngCookies manages cookie on app
+     * @param angularSpinner manages to display spinner
+     * @param infinite-scroll manages scroll
+     * @param angularModalservice manages to display modal
+     * @param ui.tree manages to display tree
+     * @param textAngular manages to display editor
+     * @param frapontillo.bootstrap-switch
+     * @param ui.bootstrap
+     * @param ngMockE2E manages to mock app
+     * @param {module} app.media manages to use mock on media service
+     * @param {module} app.auth manages to use mock on authentification service
+     * @param {module} app.cache
+     * @param {module} app.flash
+     * @param {module} app.image
+     * @param {module} app.trees manages to use mock on tree service
+     * @param {module} app.message manages to use mock on message service
+     * @param {module} app.news manages to use mock on news service
+     * @param {module} app.navigation manages to use mock on navigation service
+     * @param {module} app.push manages to use mock on push service
+     * @param {module} app.request manages to use mock on request service
+     * @param {module} app.search manages to use mock on search service
+     * @param {module} app.theme manages to use mock on theme service
+     * @param {module} app.translate manages to use mock on translate service
+     * @param {module} app.upload manages to use mock on upload service
+     * @param {module} app.user manages to use mock on user service
+     * @description
+     *      Implementation of app controller.
+     *      Initialize
+     *          constant language (english),
+     *          charge translate file,
+     *          look if user is login due to cookie.
+     *      Initialize
+     *          route and ng mock to intercept and simulate response from API.
+     */
     angular
         .module('app', [
             'ngRoute', 
@@ -16,16 +54,13 @@
             'app.auth',
             'app.cache',
             'app.flash',
-            'app.image',
             'app.trees',
             'app.message',
             'app.news',
             'app.navigation',
             'app.push',
-            'app.reporting',
             'app.request',
             'app.search',
-            'app.terms',
             'app.theme',
             'app.translate',
             'app.upload',
@@ -355,9 +390,6 @@
                 }
             }]
         };
-        /**
-         * httpBackend permit to intercept routing and simulate response from API
-         */
         $httpBackend.whenGET(/\.html$/).passThrough();
         $httpBackend.whenGET(/\.json$/).passThrough();
         $httpBackend.expect("GET", "/media/allMedia");
@@ -394,9 +426,6 @@
         $httpBackend.whenGET("/translate/allLanguage").respond(languages);
         $httpBackend.expect("POST", "upload/fileUpload");
         $httpBackend.whenPOST("upload/fileUpload").respond(fileUpload);
-        /**
-         * Permit to keep user log after refresh
-         */
         $rootScope.globals = $cookieStore.get('globals') || {};
         $rootScope.currentLanguage = 'en_US';
         if ($rootScope.globals.currentUser) {
@@ -409,9 +438,6 @@
         });
 
         $rootScope.$on('$locationChangeStart', function (event, next, current, newState, oldState) {
-            /**
-             *  Allow navigation if our old url wasn't where we prevented navigation from
-              */
             if (_preventNavigationUrl != current || _preventNavigationUrl == null) {
                 $rootScope.allowNavigation();
             }
@@ -435,9 +461,6 @@
                 event.preventDefault();
             }
             else {
-                /**
-                 * Redirect to login page if not logged in and trying to access a restricted page
-                  */
                 var restrictedPage = $.inArray($location.path(), ['/login', '/forget']) === -1;
                 $rootScope.menuAvalaible = restrictedPage;
                 var loggedIn = $rootScope.globals.currentUser;
@@ -447,11 +470,6 @@
                 }
             }
         });
-
-        /**
-         *  Take care of preventing navigation out of our angular app
-          */
-
         window.onbeforeunload = function() {
             /** Use the same data that we've set in our angular app
              */
