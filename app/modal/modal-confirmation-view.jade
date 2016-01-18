@@ -1,0 +1,12 @@
+div.modal.fade
+    div.modal-dialog
+        div.modal-content
+            div.modal-header
+                button.close(type="button", ng-click="close(false)", data-dismiss="modal", aria-hidden="true") &times;
+                h4.modal-title {{ "Ask confirmation" | translate }}
+            div.modal-body
+                p {{ "Your changes will be overwritten." | translate }}
+                p {{ "Would you like to continue anyway ?" | translate }}
+            div.modal-footer
+                button.btn.btn-default(type="button", ng-click="close(false)", data-dismiss="modal") {{ "Non" | translate }}
+                button.btn.btn-primary(type="button", ng-click="close(true)", data-dismiss="modal") {{ "Oui" | translate }}

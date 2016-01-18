@@ -16,16 +16,16 @@ $ git clone https://github.com/Olousouzian/Alseed.git
 ```
 
 
-Then install Bower dependencies
+Then install NPM and Bower dependencies
 
 ```sh
-$ bower install 
+$ npm install
+$ bower install
 ```
 
 ## Work 
 
 Now, read/learn the code and use it !
-
 
 ## Features
 

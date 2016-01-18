@@ -1,0 +1,11 @@
+div.modal.fade
+    div.modal-dialog
+        div.modal-content
+            div.modal-header
+                button.close(type="button", ng-click="closeSimple(false)", data-dismiss="modal", aria-hidden="true") &times;
+                h4.modal-title {{ "Yes or No?" | translate }}
+            div.modal-body
+                p {{ "It's your call..." | translate }}
+            div.modal-footer
+                button.btn.btn-default(type="button", ng-click="closeSimple(false)", data-dismiss="modal") No
+                button.btn.btn-primary(type="button", ng-click="closeSimple(true)", data-dismiss="modal") Yes
