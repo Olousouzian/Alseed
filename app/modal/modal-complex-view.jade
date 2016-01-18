@@ -12,9 +12,9 @@ div.modal.fade
                         div.col-sm-10
                             input.form-control#name(type="text", placeholder="Your Name", ng-model="name")
                     div.form-group
-                        label.col-sm-2 control-label(for="age") Age
+                        label.cpm-sm-2.control-label(for="age") Age
                         div.col-sm-10
                             input.form-control#inputPassword3(type="number", placeholder="Age", ng-model="age")
             div.modal-footer
-                button.btn(type="button", ng-click="closeComplex(false)") {{ cancelButton }}
+                button.btn(type="button", ng-click="closeComplex(false)", data-dismiss="modal") {{ cancelButton }}
                 button.btn.btn-primary(type="button", ng-click="closeComplex()", data-dismiss="modal") {{ submitButton }}
