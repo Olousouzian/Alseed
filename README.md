@@ -46,20 +46,19 @@ Use this credentials :
 
 ## Features
 
-- Language Template Engine
-- Media Library (Wordpress Style)
+- Simple Responsive Design made with Bootstrap
+- Simple Multi-Language Template Engine (traduction)
+- Media Library (Wordpress style)
 - Search Engine
-
 
 ## Services
 
 - Authentification
 - Cache
-- Flash
+- Flash (Bootstrap)
 - Image
 - News
 - Media
-- Push
 - Upload
 - User
 - Modal
