@@ -23,9 +23,26 @@ $ npm install
 $ bower install
 ```
 
-## Work 
+## Compilation
 
-Now, read/learn the code and use it !
+Compile all sources by
+
+```sh
+$ brunch b
+```
+
+## Demo
+
+Now, you can go to this following URL : 
+
+```sh
+http://yourdomain.com/public/
+```
+
+Use this credentials :
+
+- Login : **alseed**
+- Password : **alseed123**
 
 ## Features
 

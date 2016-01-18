@@ -33,7 +33,7 @@
             var params = { username : username, password : password };
 
             // Fake Results
-            if (username === 'loginTest' && password === 'test'){
+            if (username === 'alseed' && password === 'alseed123'){
                 var userFakeObj = { idUser : 123 };
                 var success = Object.clone(SuccessResponse);
                 success.data = userFakeObj;
