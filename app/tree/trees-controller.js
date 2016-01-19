@@ -1,6 +1,16 @@
 (function () {
     'use strict';
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name TreesController
+     * @param $rootScope
+     * @param $scope
+     * @param FlashService
+     * @param TreeService
+     * @description
+     * Controller permit to display and manage tree of app
+     */
     angular
         .module('app')
         .controller('TreesController', TreesController);
@@ -14,6 +24,10 @@
         initController();
 
         // Private functions
+        /**
+         * Permit to get tree and display it
+         * @memberof TreesController
+         */
         function initController() {
             TreeService.GetTree().then(function(response) {
                 if (response.success === true) {
@@ -29,7 +43,11 @@
                 }
             });
         }
-
+        /**
+         * Permit to get init an item
+         * @memberof TreesController
+         * @param {object} items Contains all item of tree
+         */
         function initItems(items) {
             var init = [];
 
@@ -43,7 +61,11 @@
 
             return init;
         }
-
+        /**
+         * Permit to convert all item json format
+         * @memberof TreesController
+         * @param {object} items Contains all item of tree
+         */
         function formatItems(items) {
             var formated = [];
 
@@ -66,7 +88,11 @@
         vm.toggle = function(context) {
             context.toggle();
         };
-
+        /**
+         * Permit to add item
+         * @memberof TreesController
+         * @param {object} context
+         */
         vm.add = function(context) {
             var nodeData = context.$modelValue;
             nodeData.childs.push({
@@ -79,11 +105,18 @@
                 editing: true
             });
         };
-
+        /**
+         * Permit to edit item of tree
+         * @memberof TreesController
+         */
         vm.edit = function(item) {
             item.editing = !item.editing;
         };
-
+        /**
+         * Permit to update item
+         * @memberof TreesController
+         * @param {object} item item of tree to update
+         */
         vm.updateItem = function(item) {
             if (item.temp === '') {
                 item.error = 'Le label de la rubrique ne peux pas être vide !';
@@ -98,11 +131,19 @@
             item.error = '';
             item.editing = false;
         };
-
+        /**
+         * Permit to remove item
+         * @memberof TreesController
+         * @param {object} context
+         */
         vm.remove = function(context) {
             context.remove();
         };
-
+        /**
+         * Permit to save all item and display FlashService
+         * @memberof TreesController
+         * @param {object} context
+         */
         vm.saveItems = function() {
             TreeService.PostTree(vm.treesAsJson).then(function(response) {
                 if (response.success === true) {
