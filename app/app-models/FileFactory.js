@@ -3,7 +3,7 @@
  * @ngdoc model
  * @name FileFactory
  * @description  object with 1 attribute. Instanciate file with good type
- * @attr {file} fileClass type from file
+ * @attr {File} fileClass type from file
  */
 var FileFactory = function() {
     this.fileClass = null;

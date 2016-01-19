@@ -10,7 +10,7 @@
         .module('app.user')
         .factory('UserService', UserService);
     /**
-     * @memberof app.auth
+     * @memberof app.user
      * @ngdoc service
      * @name UserService
      * @param $http Permit to call API

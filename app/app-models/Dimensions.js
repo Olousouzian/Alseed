@@ -3,7 +3,7 @@
  * @ngdoc model
  * @name Dimensions
  * @description  object with 2 attribute
- * @param {object} options contain width and height
+ * @param {Object} options contain width and height
  * @attr {int} width width from file
  * @attr {int} height from file
  */

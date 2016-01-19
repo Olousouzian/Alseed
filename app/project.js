@@ -1,8 +1,9 @@
 ﻿(function () {
     'use strict';
     /**
-     * @ngdoc controller
-     * @name app
+     * @memberof app
+     * @ngdoc Controller
+     * @name project
      * @param ngRoute manages route on app
      * @param ngCookies manages cookie on app
      * @param angularSpinner manages to display spinner

@@ -3,7 +3,7 @@
  * @ngdoc model
  * @name AbstractCollection
  * @description  object with 3 attribute
- * @attr {file} items list of file
+ * @attr {File} items list of file
  * @attr {boolean} full permit to know if items is full
  * @attr {int} capacity max file on items
  */
@@ -17,7 +17,7 @@ AbstractCollection.prototype = {
     /**
      * Add an item on items
      * @memberof AbstractCollection
-     * @param {file} item
+     * @param {File} item
      * @param {int} capacity Int to check if items is full
      */
     AddItem: function(item, capacity) {
@@ -45,7 +45,7 @@ AbstractCollection.prototype = {
     /**
      * Update an item on items
      * @memberof AbstractCollection
-     * @param {file} item
+     * @param {File} item
      */
     UpdateItem: function(item) {
         if (angular.isUndefined(item.id) === false && item.id in this.items) {

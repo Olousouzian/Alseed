@@ -10,7 +10,7 @@
         .module('app.search')
         .factory('SearchService', SearchService);
     /**
-     * @memberof app.auth
+     * @memberof app.search
      * @ngdoc service
      * @name SearchService
      * @param $q Manages promise
