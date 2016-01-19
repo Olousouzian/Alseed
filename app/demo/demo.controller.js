@@ -1,14 +1,26 @@
 (function () {
     'use strict';
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name DemoController
+     * @param ModalService Permit to display and manage modal (simple complex detail modal and  media modal)
+     * @param FlashService Permit to display message on scope
+     * @param ThemeService Permit to apply different theme following the case of using
+     * @param Uploadservice Permit to upload file on server
+     * @param rootscope Permit to access the global variable of the app
+     * @description
+     * Controller permit to see lot of function implement on app like modal.managing theme, upload file
+     */
     angular
         .module('app')
         .controller('DemoController', DemoController);
-
     DemoController.$inject = ['ModalService', 'FlashService', 'ThemeService','UploadService', '$rootScope'];
     function DemoController(ModalService, FlashService, ThemeService, UploadService, $rootScope) {
         var vm = this;
         /**
-         * Permit to show a simple modal
+         * Permit to display simple modal and define Behavior to the closure
+         * @memberof DemoController
          */
         vm.showSimpleModal = function() {
             ModalService.showModal({
@@ -29,7 +41,8 @@
             });
         }
         /**
-         *  permit to show a media modal
+         * Permit to display media modal and define Behavior to the closure
+         * @memberof DemoController
          */
         vm.showMediaModal = function(){
             ModalService.showModal({
@@ -55,7 +68,8 @@
             });
         }
         /**
-         * Permit to show a complex modal
+         * Permit to display complex modal and define Behavior to the closure
+         * @memberof DemoController
          */
         vm.showComplexModal = function() {
             ModalService.showModal({
@@ -81,7 +95,9 @@
             });
         }
         /**
-         * Permit to upload a file on server
+         * Permit to upload a file
+         * @memberof DemoController
+         * @param {File} file
          */
         vm.uploadFile=function(file){
             UploadService.UploadFile(file).then(function (response) {
@@ -93,9 +109,6 @@
                 }
             });
         }
-        /**
-         * permit to apply a new css theme on backOffice
-         */
         $('#buttonTheme').click(function() {
             ThemeService.ApplyTheme(1).then(function (response) {
                 $rootScope.theme.path = response.data;
@@ -111,28 +124,45 @@
 
 (function () {
     'use strict';
-    /****************************************************************************/
-    /*** MODAL SERVICE **********************************************************/
-    /****************************************************************************/
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name DemoSimpleModalController
+     * @param $scope
+     * @param $close Permit to define behavior to the closure
+     * @description
+     * Controller to implement a modal with a simple response (like yes or no)
+     */
     angular
         .module('app')
         .controller('DemoSimpleModalController', DemoSimpleModalController);
 
-    DemoSimpleModalController.$inject = ['$scope', '$element', 'close'];
-    function DemoSimpleModalController($scope, $element, close) {
+    DemoSimpleModalController.$inject = ['$scope', 'close'];
+    function DemoSimpleModalController($scope, close) {
         $scope.closeSimple = function(result) {
             close(result, 500); // close, but give 500ms for bootstrap to animate
         }
     }
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name MediaModalController
+     * @param SearchService
+     * @param ModalService
+     * @param MediaService
+     * @param $scope
+     * @param title
+     * @param submitButton
+     * @param cancelButton
+     * @param close
+     * @description
+     * Controller to implement a modal which contain gallery of media
+     */
     angular
         .module('app')
         .controller('MediaModalController', MediaModalController);
-    /**
-     * Media modal controller
-     */
-    MediaModalController.$inject = ['SearchService', 'ModalService', 'MediaService', '$scope', '$element', 'title', 'submitButton', 'cancelButton', 'close'];
-    function MediaModalController(SearchService, ModalService, MediaService, $scope, $element, title, submitButton, cancelButton, close) {
+    MediaModalController.$inject = ['SearchService', 'ModalService', 'MediaService', '$scope', 'title', 'submitButton', 'cancelButton', 'close'];
+    function MediaModalController(SearchService, ModalService, MediaService, $scope, title, submitButton, cancelButton, close) {
         $scope.title = title;
         $scope.submitButton = submitButton;
         $scope.cancelButton = cancelButton;
@@ -145,14 +175,19 @@
         $scope.workInProgress = false;
         $scope.searchMedia = "";
 
-
+        /**
+         * Initialize medialibrary
+         * @memberof MediaModalController
+         */
         InitController();
         function InitController(){
             $scope.mediaLibrary = new MediaLibrary();
         }
 
         /**
-         * Select a file, close modal and return file and action type
+         * Select file when we click on image and return info about file and close modal
+         * @memberof MediaModalController
+         * @param {fileFactory} file
          */
         $scope.select = function(file){
             var result = [
@@ -162,7 +197,8 @@
             $scope.closeComplex(result);
         }
         /**
-         * Permit to do a research on APi to get some specific file
+         * Permit to search specific files and display its
+         * @memberof MediaModalController
          */
         $scope.Search = function (){
             if($scope.searchMedia === ""){
@@ -212,7 +248,8 @@
             }
         }
         /**
-         *Permit to get file if searchMedia is empty or specific file if searchMedia is not empty
+         * Function call when we open modal, when we scroll or when we search specific file
+         * @memberof MediaModalController
          */
         $scope.LoadMore = function (){
             if ($scope.workInProgress === true) {
@@ -301,7 +338,8 @@
             }
         }
         /**
-         * Permit to add new file on media gallery
+         * Permit to upload a file when we click on upload button on modal media
+         * @memberof MediaModalController
          */
         $scope.UploadFile = function (file){
             MediaService.UploadFile(file).then(function(response){
@@ -318,7 +356,9 @@
             });
         }
         /**
-         *Show modal detail on click on edit button to edit or delete a file
+         * Permit to display a modal detail when we click on edit button on media modal
+         * @memberof MediaModalController
+         * @param {fileFactory} file
          */
         $scope.showDetailsModal = function(file) {
             if( $scope.numOpenModal == 0) {
@@ -377,21 +417,32 @@
             }
         }
         /**
-         * Permit to close modal
+         * function call when we close the modal
+         * @memberof MediaModalController
+         * @param {array} result contain type of action and file to display(it could be empty)
          */
         $scope.closeComplex = function(result) {
             close(result, 500);
             $('.modal-backdrop').remove();
         }
     }
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name DemoComplexModalController
+     * @param $scope
+     * @param title
+     * @param submitButton
+     * @param cancelButton
+     * @param close
+     * @description
+     * Controller to implement a complex modal
+     */
     angular
         .module('app')
         .controller('DemoComplexModalController', DemoComplexModalController);
-    /**
-     * Complex controller modal
-     */
-    DemoComplexModalController.$inject = ['$scope', '$element', 'title', 'submitButton', 'cancelButton', 'close'];
-    function DemoComplexModalController($scope, $element, title, submitButton, cancelButton, close) {
+    DemoComplexModalController.$inject = ['$scope', 'title', 'submitButton', 'cancelButton', 'close'];
+    function DemoComplexModalController($scope, title, submitButton, cancelButton, close) {
         $scope.title = title;
         $scope.submitButton = submitButton;
         $scope.cancelButton = cancelButton;
@@ -403,15 +454,26 @@
             close(result, 500);
         }
     }
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name DemoMediaDetailsModalController
+     * @param SearchService
+     * @param ModalService
+     * @param MediaService
+     * @param $scope
+     * @param title
+     * @param submitButton
+     * @param cancelButton
+     * @param close
+     * @description
+     * Controller to implement a detail modal
+     */
     angular
         .module('app')
         .controller('DemoMediaDetailsModalController', DemoMediaDetailsModalController);
-    /**
-     * Detail controller modal
-     */
-    DemoMediaDetailsModalController.$inject = ['ModalService', 'MediaService', '$scope', '$element', 'title', 'submitButton', 'cancelButton', 'file', 'close'];
-    function DemoMediaDetailsModalController(ModalService, MediaService, $scope, $element, title, submitButton, cancelButton, file, close) {
+    DemoMediaDetailsModalController.$inject = ['MediaService', '$scope', 'title', 'submitButton', 'cancelButton', 'file', 'close'];
+    function DemoMediaDetailsModalController(MediaService, $scope, title, submitButton, cancelButton, file, close) {
 
 
         $scope.title = title;
@@ -421,9 +483,10 @@
         $scope.file = file;
 
         /**
-         *
-         * @param newFile
-         * @param oldFile
+         * function call when we click on edit button of modal
+         * @memberof DemoMediaDetailsModalController
+         * @param {File} newFile
+         * @param {fileFactory} oldFile
          */
         $scope.editFile = function (newFile,oldFile){
             MediaService.UpdateFile(newFile,oldFile).then(function(response){
@@ -436,6 +499,11 @@
                 $scope.closeDetails(result);
             });
         }
+        /**
+         * function call when we delete a file
+         * @memberof DemoMediaDetailsModalController
+         * @param {fileFactory} file
+         */
         $scope.deleteFile = function (file){
             var result = [
                 "delete",
@@ -443,6 +511,11 @@
             ];
             $scope.closeDetails(result);
         }
+        /**
+         * function call when we close the modal
+         * @memberof DemoMediaDetailsModalController
+         * @param {array} result contain type of action and file to display(it could be empty)
+         */
         $scope.closeDetails = function(result) {
             close(result, 500);
         }

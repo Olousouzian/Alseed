@@ -1,6 +1,15 @@
 (function () {
     'use strict';
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name ModalConfirmationController
+     * @param $scope
+     * @param $element
+     * @param close
+     * @description
+     * Controller permit to confirm an action
+     */
     angular
         .module('app')
         .controller('ModalConfirmationController', ModalConfirmationController);

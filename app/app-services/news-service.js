@@ -1,10 +1,23 @@
 (function () {
     'use strict';
+    /**
+     * @memberof app
+     * @ngdoc module
+     * @name app.news
+     */
     angular.module('app.news', []);
     angular
         .module('app.news')
         .factory('NewsService', NewsService);
-
+    /**
+     * @memberof app.news
+     * @ngdoc service
+     * @name NewsService
+     * @param $q Manages promise
+     * @param RequestService Other way to call API with detail model structure as response
+     * @param $http Permit to call API
+     * @descriptions Service manages news.
+     */
     NewsService.$inject = ['$q', 'RequestService', '$http'];
     function NewsService($q, RequestService, $http) {
         var service = {};
@@ -18,7 +31,10 @@
 
         return service;
 
-        // Public functions
+        /**
+         * Function to get all news
+         * @memberof NewsService
+         */
         function GetAll(){
             var deffered = $q.defer();
             var route = '/news/allNews';
@@ -36,7 +52,11 @@
 
             return deffered.promise;
         }
-
+        /**
+         * Function to get one news specify by id
+         * @memberof NewsService
+         * @param {int} id id from news
+         */
         function GetOne(id) {
             var deffered = $q.defer();
 
@@ -65,7 +85,11 @@
 
             return deffered.promise;
         }
-
+        /**
+         * Function to add news with all info like (active...) on server
+         * @memberof AuthentificationService
+         * @param {object} news Object contains all info about news
+         */
         function Add(news) {
             var deffered = $q.defer();
             var route = '/news/addNews';
@@ -77,7 +101,11 @@
             });
             return deffered.promise;
         }
-
+        /**
+         * Function to update a news  on server
+         * @memberof NewsService
+         * @param {object} news Object contains all info about news
+         */
         function Update(news) {
             var deffered = $q.defer();
 
@@ -90,7 +118,11 @@
 
             return deffered.promise;
         }
-
+        /**
+         * Function to delete a news on server
+         * @memberof AuthentificationService
+         * @param {int} id id from news
+         */
         function Delete(id) {
             var deffered = $q.defer();
 
@@ -109,7 +141,12 @@
 
             return deffered.promise;
         }
-
+        /**
+         * Function to display news about expression search. It display number of news depend of options.fileLength and options.offset
+         * @memberof NewsService
+         * @param {string} expression value from input search
+         * @param {object} options Number file to get and which object begin to get
+         */
         function Search(expression, options) {
             var deffered = $q.defer();
 

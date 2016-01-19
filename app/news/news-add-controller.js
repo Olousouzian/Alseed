@@ -1,6 +1,20 @@
 (function () {
     'use strict';
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name NewsAddController
+     * @param $rootScope
+     * @param $scope
+     * @param $timeout
+     * @param $location
+     * @param $document
+     * @param NewsService
+     * @param ModalService
+     * @param FlashService
+     * @description
+     * Controller permit to add a news
+     */
     angular
         .module('app')
         .controller('NewsAddController', NewsAddController);
@@ -12,6 +26,10 @@
         initController();
 
         // Private functions
+        /**
+         * Permit to display page add
+         * @memberof NewsAddController
+         */
         function initController() {
             vm.format = 'dd/MM/yyyy';
 
@@ -59,7 +77,10 @@
                 }
             });
         }
-
+        /**
+         * Permit to redirect on news page
+         * @memberof NewsAddController
+         */
         function redirect() {
             $location.path('/news');
         }
@@ -72,7 +93,10 @@
         vm.open_popup_publish_end = function() {
             vm.popup_publish_end.opened = true;
         };
-
+        /**
+         * Permit to add a news
+         * @memberof NewsAddController
+         */
         vm.add = function() {
             // TODO : Validate form
             NewsService.Add(vm.news).then(function(response) {

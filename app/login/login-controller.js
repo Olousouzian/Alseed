@@ -1,6 +1,16 @@
 ﻿(function () {
     'use strict';
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name loginController
+     * @param $location
+     * @param AuthentificationService
+     * @param CacheService
+     * @param FlashService
+     * @description
+     * Controller of login page
+     */
     angular
         .module('app')
         .controller('LoginController', LoginController);
@@ -10,13 +20,19 @@
         var vm = this;
 
         vm.login = login;
-
+        /**
+         * Clear all cache and cookie
+         * @memberof LoginController
+         */
         (function initController() {
             // Reset login status
             AuthenticationService.ClearCredentials();
             CacheService.ClearAllCache();
         })();
-
+        /**
+         * Call authentificationService.login to test to log user
+         * @memberof LoginController
+         */
         function login() {
             vm.dataLoading = true;
             AuthenticationService.Login(vm.username, vm.password, function (response) {

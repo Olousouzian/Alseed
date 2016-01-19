@@ -1,6 +1,16 @@
 (function () {
     'use strict';
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name NewsController
+     * @param UserService
+     * @param NewsService
+     * @param ModalService
+     * @param FlashService
+     * @description
+     * Controller permit to display all news
+     */
     angular
         .module('app')
         .controller('NewsController', NewsController);
@@ -15,10 +25,17 @@
         initController();
 
         // Private functions
+        /**
+         * Call loadCurrentUser
+         * @memberof NewsController
+         */
         function initController() {
             loadCurrentUser();
         }
-
+        /**
+         * Get current user logged
+         * @memberof NewsController
+         */
         function loadCurrentUser() {
             UserService.GetCurrentUser().then(function (response) {
                 vm.user = response.data;
@@ -26,6 +43,12 @@
         }
 
         // Public functions
+        /**
+         * Permit to delete a news
+         * @memberof NewsController
+         * @param {string} index index of news
+         * @param {object} context contain all info about news
+         */
         vm.delete = function(context, index) {
             ModalService.showModal({
                 templateUrl: "news/modal-news-delete-view.html",
@@ -48,7 +71,10 @@
                 FlashService.Error('Une erreur est survenue');
             });
         }
-
+        /**
+         * Call When scroll to load more news
+         * @memberof NewsController
+         */
         vm.loadMore = function(){
            NewsService.GetAll().then(function (response) {
                vm.news = vm.news.concat(response.data);

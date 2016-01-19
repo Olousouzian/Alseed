@@ -1,10 +1,25 @@
 (function () {
     'use strict';
+    /**
+     * @memberof app
+     * @ngdoc module
+     * @name app.translate
+     */
     angular.module('app.translate', []);
     angular
         .module('app.translate')
         .factory('TranslateService', TranslateService);
-
+    /**
+     * @memberof app.translate
+     * @ngdoc service
+     * @name TranslateService
+     * @param $http Permit to call API
+     * @param $cookistore Permit to set user info on cookie
+     * @param $rootScope Manages info from scope parent
+     * @param $q Manage promise
+     * @param LANGUAGE Constant contain language
+     * @param RequestService Other way to call API
+     */
     TranslateService.$inject = ['$q', '$http', '$rootScope', 'LANGUAGE', '$cookieStore', 'RequestService'];
     function TranslateService($q, $http, $rootScope, LANGUAGE, $cookieStore, RequestService) {
         var service = {};
@@ -17,7 +32,11 @@
         var currentLang = {};
 
         return service;
-
+        /**
+         * Function use to get language by default or choose by user and get file translate (app/assets/translate/"file")
+         * @memberof TranslateService
+         * @param {string} lang to know which lang using
+         */
         function InitTranslate(lang) {
             var deffered = $q.defer();
             GetLanguages().then(function(response) {
@@ -55,10 +74,13 @@
 
             return deffered.promise;
         }
-
+        /**
+         * Get translate of phrase
+         * @memberof TranslateService
+         * @param {string} input phrase to translate
+         * @param {array} args variable link with phrase to note translate
+         */
         function GetTranslate(input, args) {
-            // build translation with args
-            // search for %ns occurencies
             var trans = undefined;
             
             if (angular.isUndefined(currentLang[$rootScope.currentLanguage]) === false) {
@@ -78,7 +100,10 @@
             
             return input;
         }
-
+        /**
+         * Function use to get all languages available
+         * @memberof TranslateService
+         */
         function GetLanguages() {
             var deffered = $q.defer();
 
@@ -93,7 +118,10 @@
             });
             return deffered.promise;
         }
-
+        /**
+         * Clear info translate from cache
+         * @memberof ClearCache
+         */
         function ClearCache(){
             currentLang = {};
             $rootScope.currentLanguage = null;

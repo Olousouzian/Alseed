@@ -1,6 +1,18 @@
 (function () {
     'use strict';
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name NewsEditController
+     * @param $location
+     * @param $routeParams
+     * @param $document
+     * @param NewsService
+     * @param ModalService
+     * @param FlashService
+     * @description
+     * Controller permit to edit a news
+     */
     angular
         .module('app')
         .config(function($provide) {
@@ -49,6 +61,10 @@
         initController();
 
         // Private functions
+        /**
+         * Permit to get one news selected
+         * @memberof NewsEditController
+         */
         function initController() {
             NewsService.GetOne($routeParams.id).then(function(response) {
                 if (response.success === true) {
@@ -60,12 +76,19 @@
                 }
             });
         }
-
+        /**
+         * Permit to redirect on news page
+         * @memberof NewsEditController
+         */
         function redirect() {
             $location.path('/news');
         }
 
         // Public functions
+        /**
+         * Permit to update a news
+         * @memberof NewsEditController
+         */
         vm.update = function() {
             NewsService.Update(vm.news).then(function(response) {
                 if (response.success === true) {
@@ -77,7 +100,10 @@
                 $document.scrollTop(0);
             });
         };
-
+        /**
+         * Permit to delete a news
+         * @memberof NewsEditController
+         */
         vm.delete = function() {
             ModalService.showModal({
                 templateUrl: "news/modal-news-delete-view.html",

@@ -2,15 +2,22 @@
     'use strict';
     /**
      * @memberof app
-     * @ngdoc service
-     * @name AuthentificationService
-     * @description  Service which permit to login to set value in cookie and to clear value about user
+     * @ngdoc module
+     * @name app.auth
      */
     angular.module('app.auth', []);
     angular
         .module('app.auth')
         .factory('AuthenticationService', AuthenticationService);
-
+    /**
+     * @memberof app.auth
+     * @ngdoc service
+     * @name AuthentificationService
+     * @param $http Permit to call API
+     * @param $cookistore Permit to set user info on cookie
+     * @param $rootScope Manages info from scope parent
+     * @param UserService To get info user from API
+     */
     AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'UserService'];
     function AuthenticationService($http, $cookieStore, $rootScope, $timeout, UserService) {
         var service = {};
@@ -20,14 +27,14 @@
         service.ClearCredentials = ClearCredentials;
 
         return service;
-
+        /**
+         * Function calling UserService.login to get info user and use callback to give info
+         * @memberof AuthentificationService
+         * @param {string} username
+         * @param {string} password
+         * @param callback To send info to controller
+         */
         function Login(username, password, callback) {
-
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             * So remove the timeout for production use
-             * Username valid : test
-             * Password 
-             ----------------------------------------------*/
             $timeout(function () {
                 UserService.Login(username, password)
                     .then(function (response) {
@@ -35,7 +42,13 @@
                     });
             }, 1000);
         }
-
+        /**
+         * Function use to encode user info and put info on global variable from rootScope and cookie
+         * @memberof AuthentificationService
+         * @param {string} username
+         * @param {string} password
+         * @param {int} idUser
+         */
         function SetCredentials(username, password, idUser) {
             var authdata = Base64.encode(username + ':' + password);
 
@@ -50,7 +63,10 @@
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
             $cookieStore.put('globals', $rootScope.globals);
         }
-
+        /**
+         * Function use to clear user info from Cookie and rootscope
+         * @memberof AuthentificationService
+         */
         function ClearCredentials() {
             $rootScope.globals = {};
             $cookieStore.remove('globals');

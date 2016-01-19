@@ -1,10 +1,21 @@
 (function () {
     'use strict';
+    /**
+     * @memberof app
+     * @ngdoc module
+     * @name app.trees
+     */
     angular.module('app.trees', []);
     angular
         .module('app.trees')
         .factory('TreeService', TreeService);
-
+    /**
+     * @memberof app.trees
+     * @ngdoc service
+     * @name TreeService
+     * @param $q Manages promise
+     * @param $http Permit to call API
+     */
     TreeService.$inject = ['$q', '$http'];
     function TreeService($q, $http) {
         var service = {};
@@ -13,8 +24,10 @@
         service.PostTree = PostTree;
 
         return service;
-
-        // Public functions
+        /**
+         * Function to get tree from app
+         * @memberof TreeService
+         */
         function GetTree() {
             var deffered = $q.defer();
             var route = '/trees/getTree';
@@ -32,7 +45,11 @@
 
             return deffered.promise;
         }
-
+        /**
+         * Function to set new info about tree
+         * @memberof AuthentificationService
+         * @param trees
+         */
         function PostTree(trees) {
             var deffered = $q.defer();
 

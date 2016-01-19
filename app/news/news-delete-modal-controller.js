@@ -1,6 +1,15 @@
 (function () {
     'use strict';
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name NewsDeleteModalController
+     * @param $scope
+     * @param $element
+     * @param close
+     * @description
+     * Modal confirmation when we delete a news
+     */
     angular
         .module('app')
         .controller('NewsDeleteModalController', NewsDeleteModalController);

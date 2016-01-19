@@ -1,10 +1,23 @@
 ﻿(function () {
     'use strict';
+    /**
+     * @memberof app
+     * @ngdoc module
+     * @name app.user
+     */
     angular.module('app.user', []);
     angular
         .module('app.user')
         .factory('UserService', UserService);
-
+    /**
+     * @memberof app.auth
+     * @ngdoc service
+     * @name UserService
+     * @param $http Permit to call API
+     * @param $q Manage promise
+     * @param $rootScope Manages info from scope parent
+     * @param RequestService Other way to call APi with detail model structure as response
+     */
     UserService.$inject = ['$q', '$http', '$rootScope', 'RequestService'];
     function UserService($q, $http, $rootScope, RequestService) {
         var service = {};
@@ -20,10 +33,17 @@
         return service;
 
         // Public functions
+        /**
+         * Function to clear cache
+         * @memberof UserService
+         */
         function ClearCache(){
             currentUser = undefined;
         }
-        
+        /**
+         * Function to login
+         * @memberof UserService
+         */
         function Login(username, password){
 
             var deffered = $q.defer();
@@ -53,7 +73,10 @@
 
             return deffered.promise;
         }
-
+        /**
+         * Function to get current user logged
+         * @memberof UserService
+         */
         function GetCurrentUser(){
 
             var deffered = $q.defer();
@@ -75,21 +98,14 @@
                 var error = Object.clone(ErrorResponse);
                 deffered.resolve(error);
             }
-
-            /* Real WebServices
-            // WS Parameters
-            var route = '/api/user/myself';
-            $http.post(route, params).then(
-                function(data){
-                deffered.resolve(data);
-            },  function(status) {
-                deffered.reject(status);
-            });
-            */
-
             return deffered.promise;
-        }  
-
+        }
+        /**
+         * Function use to get different user save and display resposne
+         * @memberof UserService
+         * @param {string} expression value from input search
+         * @param {object} options Number file to get and which object begin to get
+         */
         function Search(expression, options) {
             var deffered = $q.defer();
 

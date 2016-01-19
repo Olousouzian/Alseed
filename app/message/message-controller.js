@@ -1,6 +1,14 @@
 (function () {
     'use strict';
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name MessageController
+     * @param MessageService
+     * @param $rootScope
+     * @description
+     * Controller to display all message save
+     */
     angular
         .module('app')
         .controller('MessageController', MessageController);
@@ -16,7 +24,10 @@
             alert("delete");
         }
         initController();
-
+        /**
+         * Permit to get all message and display its on scope
+         * @memberof MessageController
+         */
         function initController() {
             MessageService.GetAllMessage().then(function(response){
                if(response.success) {

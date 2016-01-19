@@ -1,10 +1,22 @@
 (function () {
     'use strict';
+    /**
+     * @memberof app
+     * @ngdoc module
+     * @name app.message
+     */
     angular.module('app.message', []);
     angular
         .module('app.message')
         .factory('MessageService', MessageService);
-
+    /**
+     * @memberof app.message
+     * @ngdoc service
+     * @name MessageService
+     * @param $q Permit to instanciate a promise
+     * @param $http Permit to call API.
+     * @description This service manages message on timeline. Permit to define a message and  if push must be sending.
+     */
     MessageService.$inject = ['$q','$http'];
     function MessageService($q,$http) {
         var service = {};
@@ -15,8 +27,10 @@
         service.Delete = Delete;
         service.Add = Add;
         return service;
-
-        // Public functions
+        /**
+         * Function to get all message
+         * @memberof MessageService
+         */
         function GetAllMessage() {
             var deffered = $q.defer();
             var route = '/message/allMessage';
@@ -29,10 +43,14 @@
             });
             return deffered.promise;
         }
+        /**
+         * Function to get one message.
+         * @memberof MessageService
+         * @param {int} id id from Message
+         */
         function GetOneMessage(id){
             var deffered = $q.defer();
 
-            /* Fake results */
             GetAllMessage().then(function(response) {
                 if (response.success === true) {
                     for (var i=0; i < response.data.length; i++) {
@@ -53,6 +71,11 @@
             });
             return deffered.promise;
         }
+        /**
+         * Function to update a message
+         * @memberof MessageService
+         * @param {array} message new message + id
+         */
         function Update(message) {
             var deffered = $q.defer();
             var route = '/message/updateMessage';
@@ -64,6 +87,11 @@
 
             return deffered.promise;
         }
+        /**
+         * Function to delete a message
+         * @memberof MessageService
+         * @param {int} id
+         */
         function Delete(id) {
             var deffered = $q.defer();
 
@@ -84,6 +112,11 @@
 
             return deffered.promise;
         }
+        /**
+         * Function to add  message
+         * @memberof MessageService
+         * @param {array} message info from message
+         */
         function Add(message) {
             var deffered = $q.defer();
             var route = '/message/addMessage';

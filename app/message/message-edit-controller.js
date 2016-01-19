@@ -1,6 +1,19 @@
 (function () {
     'use strict';
-
+    /**
+     * @memberof app
+     * @ngdoc controller
+     * @name MessageEditController
+     * @param PushService
+     * @param $location
+     * @param $routeParams
+     * @param $document
+     * @param MessageService
+     * @param ModalService
+     * @param FlashService
+     * @description
+     * Controller permit to edit message on timeline
+     */
     angular
         .module('app')
         .controller('MessageEditController', MessageEditController);
@@ -16,6 +29,10 @@
         initController();
 
         // Private functions
+        /**
+         * Get one message in terms of $routeParam.id and display info
+         * @memberof MessageEditController
+         */
         function initController() {
             MessageService.GetOneMessage($routeParams.id).then(function(response) {
                 if (response.success === true) {
@@ -27,12 +44,19 @@
                 }
             });
         }
-
+        /**
+         * Redirect on message page
+         * @memberof MessageEditController
+         */
         function redirect() {
             $location.path('/message');
         }
 
         // Public functions
+        /**
+         * Permit to update a  message
+         * @memberof MessageEditController
+         */
         vm.update = function() {
             MessageService.Update(vm.message).then(function(response) {
                 if (response.success === true) {
@@ -47,7 +71,10 @@
                 $document.scrollTop(0);
             });
         };
-
+        /**
+         * Permit to delete a message
+         * @memberof MessageEditController
+         */
         vm.delete = function() {
             MessageService.Delete(vm.message.id).then(function(response) {
                 if (response.success === true) {

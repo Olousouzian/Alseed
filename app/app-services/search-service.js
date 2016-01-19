@@ -1,10 +1,23 @@
 (function () {
     'use strict';
+    /**
+     * @memberof app
+     * @ngdoc module
+     * @name app.search
+     */
     angular.module('app.search', []);
     angular
         .module('app.search')
         .factory('SearchService', SearchService);
-
+    /**
+     * @memberof app.auth
+     * @ngdoc service
+     * @name SearchService
+     * @param $q Manages promise
+     * @param $injector
+     * @param $cookieStore
+     * @param $rootscope
+     */
     SearchService.$inject = ['$q', '$injector', '$cookieStore', '$rootScope'];
     function SearchService($q, $injector, $cookieStore, $rootScope) {
         var service = {};
@@ -14,11 +27,9 @@
         initService();      
 
         return service;
-
         /**
-         * initService()
-         *
-         * @return void
+         * Function to search on all service associate to SearchService
+         * @memberof SearchService
          */
         function initService() {
             $rootScope.availableSearchProviders = _getAvailableSearchProviders();
@@ -36,7 +47,7 @@
 
         /**
          * Search() returns results hash
-         *
+         * @memberof SearchService
          * @param {string} expression
          * @param {object} options
          * @return {object} results
@@ -91,7 +102,7 @@
         // Private functions
         /**
          * _getAvailableSearchProviders() returns list of services
-         * 
+         * @memberof SearchService
          * @return {array}
          */
         function _getAvailableSearchProviders() {
@@ -100,7 +111,7 @@
 
         /**
          * _checkAvailability() returns boolean
-         *
+         * @memberof SearchService
          * @param {string} service
          * @return {boolean|object} result
          */
@@ -114,7 +125,6 @@
 
         /**
          * _getDefaultOptions()
-         *
          * @return {object}
          */
         function _getDefaultOptions() {
