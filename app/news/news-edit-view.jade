@@ -1,0 +1,21 @@
+h1 {{ "Edit news" | translate }}
+
+div(ng-if="vm.isLoaded")
+    h2 {{ vm.news.title }}
+
+    p.text-primary {{ "Créée le :" | translate }} {{ vm.news.created_at * 1000 | date:'dd/MM/yyyy HH:mm':'UTC' }} 
+        span.text-success(ng-if="vm.news.created_at != vm.news.updated_at") {{ "Mise à jour le :"}} {{ vm.news.updated_at * 1000 | date:'dd/MM/yyyy HH:mm':'UTC' }}
+
+    p.form-group
+        label(for="active") {{ "News :" | translate }}
+        input#active(bs-switch, ng-model="vm.news.active", type="checkbox", switch-on-text="Oui", switch-off-text="Non")
+    p.form-froup
+        label(for="excerpt") {{ "Header :" | translate }}
+        div#excerpt(text-angular, ng-model="vm.news.excerpt")
+    p.form-group
+        label(for="content") {{ "Contents :" | translate }}
+        div#content(text-angular, ng-model="vm.news.content")
+
+    a.btn.btn-danger.pull-right(ng-click="vm.delete()") {{ "Delete" | translate }}
+    a.btn.btn-default(href="#/news") {{ "Back" | translate }}
+    a.btn.btn-success(ng-click="vm.update()") {{ "Save" | translate }}
