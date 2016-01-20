@@ -10,7 +10,8 @@
     "angular"
   ],
   "scripts": {
-    "build": "./node_modules/brunch/bin/brunch b",
+    "build-css": "./node_modules/node-sass/bin/node-sass --include-path app/app-content/themes/1/css app/app-content/themes/1/css/app1.scss public/themes/1/css/app1.css && ./node_modules/node-sass/bin/node-sass --include-path app/app-content/themes/2/css app/app-content/themes/2/css/app2.scss public/themes/2/css/app2.css",
+    "build": "npm run build-css && ./node_modules/brunch/bin/brunch b",
     "test": "karma start --browsers PhantomJS --single-run --reporters junit,dots",
     "test-watch": "karma start --browsers PhantomJS",
     "coverage": "karma start --browsers PhantomJS --single-run --reporters coverage,dots",
@@ -36,6 +37,7 @@
     "javascript-brunch": "^1.8.0",
     "jsdoc": "^3.4.0",
     "karma": "^0.13.16",
+    "node-sass": "^3.4.2",
     "sass-brunch": "^1.9.2",
     "static-jade-brunch": "^1.8.0"
   }

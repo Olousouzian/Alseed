@@ -8,8 +8,7 @@
     angular.module('app.cache', []);
     angular
         .module('app.cache')
-        .factory('CacheService', CacheService)
-        .factory('AuthenticationService', AuthenticationService);
+        .factory('CacheService', CacheService);
     /**
      * @memberof app.cache
      * @ngdoc service
