@@ -45,7 +45,7 @@
             /*Fake Result*/
             if (!(id in themeLoad)) {
                 var success = Object.clone(SuccessResponse);
-                success.data = "css/" + id + "/app" + id + ".css";
+                success.data = "themes/" + id + "/css/app" + id + ".css";
                 themeLoad[id] = success;
                 $rootScope.theme.path = success.data;
                 deffered.resolve(success);

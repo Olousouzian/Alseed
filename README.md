@@ -28,7 +28,7 @@ $ bower install
 Compile all sources by
 
 ```sh
-$ brunch b
+$ npm run build
 ```
 
 ## Demo

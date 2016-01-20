@@ -2,6 +2,8 @@ exports.config =
     conventions:
         ignored: [
             /-test.js$/
+            /app[\\/]app-content[\\/]themes[\\/]/
+            /app[\\/]app-content[\\/]docTemplate[\\/]/
         ]
     modules:
         definition: false
