@@ -35,11 +35,14 @@ $ npm run build
 
 Now, you can go to this following URL : 
 
-```sh
 http://yourdomain.com/public/
-```
+
 
 ## Documentation
+
+Use this following address : 
+
+https://cdn.rawgit.com/Olousouzian/Alseed/master/docs/index.html
 
 If you want to generate a new documentation :
 
