@@ -3,7 +3,8 @@
 
 var fs = require('jsdoc/fs');
 var path = require('jsdoc/path');
-var angularTemplate = require('../../../node_modules/angular-jsdoc/node_modules/angular-template');
+//var angularTemplate = require('../../../node_modules/angular-jsdoc/node_modules/angular-template');
+var angularTemplate = require('angular-template');
 var marked = require('marked');
 var helper = require('jsdoc/util/templateHelper');
 

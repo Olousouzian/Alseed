@@ -39,6 +39,14 @@ Now, you can go to this following URL :
 http://yourdomain.com/public/
 ```
 
+## Documentation
+
+If you want to generate a new documentation :
+
+```sh
+$ ./generate_doc.sh
+```
+
 Use this credentials :
 
 - Login : **alseed**
@@ -67,4 +75,3 @@ Use this credentials :
 # License
 
 This solution is under MIT license.
-

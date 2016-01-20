@@ -1,0 +1,560 @@
+<!doctype html>
+<html>
+  <head>
+    <title>JSDoc: search</title>
+    <link type="text/css" rel="stylesheet" href="css/jsdoc-default.css">
+    <link href="css/prettify-tomorrow.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <script src="js/prettify.js"></script>
+    <script src="js/angular.min.js"></script>
+  </head>
+  <body ng-app="">
+    <nav>
+      <h2><a href="index.html" class="menu">Index</a></h2>
+      <ul class="module">
+        <!-- app -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp = !moduleapp">
+            module: app
+          </a>
+          <i ng-cloak="" ng-show="moduleapp">+</i>
+        </h3>
+        <li id="app" ng-hide="moduleapp">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appmodel = !appmodel">
+                model
+              </a>
+              <i ng-cloak="" ng-show="appmodel">+</i>
+            </h3>
+            <ul ng-hide="appmodel">
+              <li>
+                <a href="app.AbstractCollection.html" class="className">AbstractCollection</a>
+              </li><li>
+                <a href="app.AbstractFile.html" class="className">AbstractFile</a>
+              </li><li>
+                <a href="app.Dimensions.html" class="className">Dimensions</a>
+              </li><li>
+                <a href="app.FileCollection.html" class="className">FileCollection</a>
+              </li><li>
+                <a href="app.FileFactory.html" class="className">FileFactory</a>
+              </li><li>
+                <a href="app.FileImage.html" class="className">FileImage</a>
+              </li><li>
+                <a href="app.MediaLibrary.html" class="className">MediaLibrary</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appdirective = !appdirective">
+                directive
+              </a>
+              <i ng-cloak="" ng-show="appdirective">+</i>
+            </h3>
+            <ul ng-hide="appdirective">
+              <li>
+                <a href="app.alseedLanguage.html" class="className">alseedLanguage</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appmodule = !appmodule">
+                module
+              </a>
+              <i ng-cloak="" ng-show="appmodule">+</i>
+            </h3>
+            <ul ng-hide="appmodule">
+              <li>
+                <a href="app.auth.html" class="className">auth</a>
+              </li><li>
+                <a href="app.cache.html" class="className">cache</a>
+              </li><li>
+                <a href="app.flash.html" class="className">flash</a>
+              </li><li>
+                <a href="app.media.html" class="className">media</a>
+              </li><li>
+                <a href="app.message.html" class="className">message</a>
+              </li><li>
+                <a href="app.navigation.html" class="className">navigation</a>
+              </li><li>
+                <a href="app.news.html" class="className">news</a>
+              </li><li>
+                <a href="app.push.html" class="className">push</a>
+              </li><li>
+                <a href="app.request.html" class="className">request</a>
+              </li><li>
+                <a href="app.search.html" class="className">search</a>
+              </li><li>
+                <a href="app.theme.html" class="className">theme</a>
+              </li><li>
+                <a href="app.translate.html" class="className">translate</a>
+              </li><li>
+                <a href="app.trees.html" class="className">trees</a>
+              </li><li>
+                <a href="app.upload.html" class="className">upload</a>
+              </li><li>
+                <a href="app.user.html" class="className">user</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appfilter = !appfilter">
+                filter
+              </a>
+              <i ng-cloak="" ng-show="appfilter">+</i>
+            </h3>
+            <ul ng-hide="appfilter">
+              <li>
+                <a href="app.bytesFilter.html" class="className">bytesFilter</a>
+              </li><li>
+                <a href="app.translateFilter.html" class="className">translateFilter</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appcontroller = !appcontroller">
+                controller
+              </a>
+              <i ng-cloak="" ng-show="appcontroller">+</i>
+            </h3>
+            <ul ng-hide="appcontroller">
+              <li>
+                <a href="app.DemoComplexModalController.html" class="className">DemoComplexModalController</a>
+              </li><li>
+                <a href="app.DemoController.html" class="className">DemoController</a>
+              </li><li>
+                <a href="app.DemoMediaDetailsModalController.html" class="className">DemoMediaDetailsModalController</a>
+              </li><li>
+                <a href="app.DemoSimpleModalController.html" class="className">DemoSimpleModalController</a>
+              </li><li>
+                <a href="app.ForgetController.html" class="className">ForgetController</a>
+              </li><li>
+                <a href="app.HomeController.html" class="className">HomeController</a>
+              </li><li>
+                <a href="app.loginController.html" class="className">loginController</a>
+              </li><li>
+                <a href="app.MediaModalController.html" class="className">MediaModalController</a>
+              </li><li>
+                <a href="app.MenuController.html" class="className">MenuController</a>
+              </li><li>
+                <a href="app.MessageAddController.html" class="className">MessageAddController</a>
+              </li><li>
+                <a href="app.MessageController.html" class="className">MessageController</a>
+              </li><li>
+                <a href="app.MessageEditController.html" class="className">MessageEditController</a>
+              </li><li>
+                <a href="app.ModalConfirmationController.html" class="className">ModalConfirmationController</a>
+              </li><li>
+                <a href="app.NavigationController.html" class="className">NavigationController</a>
+              </li><li>
+                <a href="app.NewsAddController.html" class="className">NewsAddController</a>
+              </li><li>
+                <a href="app.NewsController.html" class="className">NewsController</a>
+              </li><li>
+                <a href="app.NewsDeleteModalController.html" class="className">NewsDeleteModalController</a>
+              </li><li>
+                <a href="app.NewsEditController.html" class="className">NewsEditController</a>
+              </li><li>
+                <a href="app.NotFoundController.html" class="className">NotFoundController</a>
+              </li><li>
+                <a href="app.TreesController.html" class="className">TreesController</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appController = !appController">
+                Controller
+              </a>
+              <i ng-cloak="" ng-show="appController">+</i>
+            </h3>
+            <ul ng-hide="appController">
+              <li>
+                <a href="app.project.html" class="className">project</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_auth -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_auth = !moduleapp_auth">
+            module: app.auth
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_auth">+</i>
+        </h3>
+        <li id="app.auth" ng-hide="moduleapp_auth">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_authservice = !app_authservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_authservice">+</i>
+            </h3>
+            <ul ng-hide="app_authservice">
+              <li>
+                <a href="app.auth.AuthentificationService.html" class="className">AuthentificationService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_cache -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_cache = !moduleapp_cache">
+            module: app.cache
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_cache">+</i>
+        </h3>
+        <li id="app.cache" ng-hide="moduleapp_cache">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_cacheservice = !app_cacheservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_cacheservice">+</i>
+            </h3>
+            <ul ng-hide="app_cacheservice">
+              <li>
+                <a href="app.cache.CacheService.html" class="className">CacheService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_flash -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_flash = !moduleapp_flash">
+            module: app.flash
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_flash">+</i>
+        </h3>
+        <li id="app.flash" ng-hide="moduleapp_flash">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_flashservice = !app_flashservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_flashservice">+</i>
+            </h3>
+            <ul ng-hide="app_flashservice">
+              <li>
+                <a href="app.flash.Flashservice.html" class="className">Flashservice</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_media -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_media = !moduleapp_media">
+            module: app.media
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_media">+</i>
+        </h3>
+        <li id="app.media" ng-hide="moduleapp_media">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_mediaservice = !app_mediaservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_mediaservice">+</i>
+            </h3>
+            <ul ng-hide="app_mediaservice">
+              <li>
+                <a href="app.media.MediaService.html" class="className">MediaService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_message -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_message = !moduleapp_message">
+            module: app.message
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_message">+</i>
+        </h3>
+        <li id="app.message" ng-hide="moduleapp_message">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_messageservice = !app_messageservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_messageservice">+</i>
+            </h3>
+            <ul ng-hide="app_messageservice">
+              <li>
+                <a href="app.message.MessageService.html" class="className">MessageService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_navigation -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_navigation = !moduleapp_navigation">
+            module: app.navigation
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_navigation">+</i>
+        </h3>
+        <li id="app.navigation" ng-hide="moduleapp_navigation">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_navigationservice = !app_navigationservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_navigationservice">+</i>
+            </h3>
+            <ul ng-hide="app_navigationservice">
+              <li>
+                <a href="app.navigation.NavigationService.html" class="className">NavigationService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_news -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_news = !moduleapp_news">
+            module: app.news
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_news">+</i>
+        </h3>
+        <li id="app.news" ng-hide="moduleapp_news">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_newsservice = !app_newsservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_newsservice">+</i>
+            </h3>
+            <ul ng-hide="app_newsservice">
+              <li>
+                <a href="app.news.NewsService.html" class="className">NewsService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_push -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_push = !moduleapp_push">
+            module: app.push
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_push">+</i>
+        </h3>
+        <li id="app.push" ng-hide="moduleapp_push">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_pushservice = !app_pushservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_pushservice">+</i>
+            </h3>
+            <ul ng-hide="app_pushservice">
+              <li>
+                <a href="app.push.PushService.html" class="className">PushService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_request -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_request = !moduleapp_request">
+            module: app.request
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_request">+</i>
+        </h3>
+        <li id="app.request" ng-hide="moduleapp_request">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_requestservice = !app_requestservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_requestservice">+</i>
+            </h3>
+            <ul ng-hide="app_requestservice">
+              <li>
+                <a href="app.request.RequestService.html" class="className">RequestService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_search -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_search = !moduleapp_search">
+            module: app.search
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_search">+</i>
+        </h3>
+        <li id="app.search" ng-hide="moduleapp_search">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_searchservice = !app_searchservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_searchservice">+</i>
+            </h3>
+            <ul ng-hide="app_searchservice">
+              <li>
+                <a href="app.search.SearchService.html" class="className">SearchService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_theme -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_theme = !moduleapp_theme">
+            module: app.theme
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_theme">+</i>
+        </h3>
+        <li id="app.theme" ng-hide="moduleapp_theme">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_themeservice = !app_themeservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_themeservice">+</i>
+            </h3>
+            <ul ng-hide="app_themeservice">
+              <li>
+                <a href="app.theme.SearchService.html" class="className">SearchService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_translate -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_translate = !moduleapp_translate">
+            module: app.translate
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_translate">+</i>
+        </h3>
+        <li id="app.translate" ng-hide="moduleapp_translate">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_translateservice = !app_translateservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_translateservice">+</i>
+            </h3>
+            <ul ng-hide="app_translateservice">
+              <li>
+                <a href="app.translate.TranslateService.html" class="className">TranslateService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_trees -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_trees = !moduleapp_trees">
+            module: app.trees
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_trees">+</i>
+        </h3>
+        <li id="app.trees" ng-hide="moduleapp_trees">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_treesservice = !app_treesservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_treesservice">+</i>
+            </h3>
+            <ul ng-hide="app_treesservice">
+              <li>
+                <a href="app.trees.TreeService.html" class="className">TreeService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_upload -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_upload = !moduleapp_upload">
+            module: app.upload
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_upload">+</i>
+        </h3>
+        <li id="app.upload" ng-hide="moduleapp_upload">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_uploadservice = !app_uploadservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_uploadservice">+</i>
+            </h3>
+            <ul ng-hide="app_uploadservice">
+              <li>
+                <a href="app.upload.Uploadservice.html" class="className">Uploadservice</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_user -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_user = !moduleapp_user">
+            module: app.user
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_user">+</i>
+        </h3>
+        <li id="app.user" ng-hide="moduleapp_user">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_userservice = !app_userservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_userservice">+</i>
+            </h3>
+            <ul ng-hide="app_userservice">
+              <li>
+                <a href="app.user.UserService.html" class="className">UserService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="content" class="page-wrap">
+      <h1 class="title">
+        search
+      </h1>
+      <div id="main" class="big-container">
+        <!-- source code html -->
+        <!-- index.html -->
+        <!-- class files -->
+        <div>
+          <div><div class="container-overview">
+      <dt></dt>
+      <dd>
+        <div class="description">
+        </div>
+        <div class="details"></div>
+      </dd>
+    </div>
+    <section>
+    </section></div>
+        </div>
+      </div>
+      <footer style="clear:both">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+        using
+        <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template</a>
+      </footer>
+    </div>
+    <!--%= prettyJson %-->
+    <script>
+      prettyPrint();
+      var lineNo = window.location.hash.match(/#line([0-9]+)$/);
+      lineNo && document.querySelector("ol li:nth-child("+(lineNo[1])+")").scrollIntoView();
+    </script>
+  </body>
+</html>
