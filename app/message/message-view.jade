@@ -1,0 +1,26 @@
+h1 {{ "Timeline" | translate }}
+a.pull-right.btn.btn-primary.btn.xs(href="#/message/add")
+        span.glyphicon.glyphicon-plus
+p {{ "Search by date : " | translate }}
+input(type="text",ng-model="searchDate")
+p {{ "Search by name : " | translate }}
+input(type="text",ng-model="searchMessage")
+div.table-responsive
+    table.table.table-hover(md-table, md-row-select, ng-model="selected", md-progress="promise")
+        thead(md-head)
+          tr(md-row)
+            th(md-column)
+                span {{ "Name" | translate }}
+            th(md-column)
+                span {{ "Date" | translate }}
+            th(md-column)
+                span {{ "Action" | translate }}
+        tbody(md-body)
+          tr(md-row, ng-repeat="message in vm.messages | filter:searchMessage")
+            td(md-cell) {{message.name}}
+            td(md-cell) {{message.date}}
+            td(md-cell style="width: 100px;")
+                a.btn.btn-success(href="#/message/{{ message.id }}")
+                    span.glyphicon.glyphicon-pencil
+                a.btn.btn-danger(href="", ng-click="vm.Delete()")
+                     span.glyphicon.glyphicon-remove

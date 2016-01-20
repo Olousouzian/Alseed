@@ -1,0 +1,1017 @@
+<!doctype html>
+<html>
+  <head>
+    <base href="../">
+    <title>JSDoc: source : project.js</title>
+    <link type="text/css" rel="stylesheet" href="css/jsdoc-default.css">
+    <link href="css/prettify-tomorrow.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700" rel="stylesheet" type="text/css">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <script src="js/prettify.js"></script>
+    <script src="js/angular.min.js"></script>
+  </head>
+  <body ng-app="">
+    <nav>
+      <h2><a href="index.html" class="menu">Index</a></h2>
+      <ul class="module">
+        <!-- app -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp = !moduleapp">
+            module: app
+          </a>
+          <i ng-cloak="" ng-show="moduleapp">+</i>
+        </h3>
+        <li id="app" ng-hide="moduleapp">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appmodel = !appmodel">
+                model
+              </a>
+              <i ng-cloak="" ng-show="appmodel">+</i>
+            </h3>
+            <ul ng-hide="appmodel">
+              <li>
+                <a href="app.AbstractCollection.html" class="className">AbstractCollection</a>
+              </li><li>
+                <a href="app.AbstractFile.html" class="className">AbstractFile</a>
+              </li><li>
+                <a href="app.Dimensions.html" class="className">Dimensions</a>
+              </li><li>
+                <a href="app.FileCollection.html" class="className">FileCollection</a>
+              </li><li>
+                <a href="app.FileFactory.html" class="className">FileFactory</a>
+              </li><li>
+                <a href="app.FileImage.html" class="className">FileImage</a>
+              </li><li>
+                <a href="app.MediaLibrary.html" class="className">MediaLibrary</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appdirective = !appdirective">
+                directive
+              </a>
+              <i ng-cloak="" ng-show="appdirective">+</i>
+            </h3>
+            <ul ng-hide="appdirective">
+              <li>
+                <a href="app.alseedLanguage.html" class="className">alseedLanguage</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appmodule = !appmodule">
+                module
+              </a>
+              <i ng-cloak="" ng-show="appmodule">+</i>
+            </h3>
+            <ul ng-hide="appmodule">
+              <li>
+                <a href="app.auth.html" class="className">auth</a>
+              </li><li>
+                <a href="app.cache.html" class="className">cache</a>
+              </li><li>
+                <a href="app.flash.html" class="className">flash</a>
+              </li><li>
+                <a href="app.media.html" class="className">media</a>
+              </li><li>
+                <a href="app.message.html" class="className">message</a>
+              </li><li>
+                <a href="app.navigation.html" class="className">navigation</a>
+              </li><li>
+                <a href="app.news.html" class="className">news</a>
+              </li><li>
+                <a href="app.push.html" class="className">push</a>
+              </li><li>
+                <a href="app.request.html" class="className">request</a>
+              </li><li>
+                <a href="app.search.html" class="className">search</a>
+              </li><li>
+                <a href="app.theme.html" class="className">theme</a>
+              </li><li>
+                <a href="app.translate.html" class="className">translate</a>
+              </li><li>
+                <a href="app.trees.html" class="className">trees</a>
+              </li><li>
+                <a href="app.upload.html" class="className">upload</a>
+              </li><li>
+                <a href="app.user.html" class="className">user</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appfilter = !appfilter">
+                filter
+              </a>
+              <i ng-cloak="" ng-show="appfilter">+</i>
+            </h3>
+            <ul ng-hide="appfilter">
+              <li>
+                <a href="app.bytesFilter.html" class="className">bytesFilter</a>
+              </li><li>
+                <a href="app.translateFilter.html" class="className">translateFilter</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appcontroller = !appcontroller">
+                controller
+              </a>
+              <i ng-cloak="" ng-show="appcontroller">+</i>
+            </h3>
+            <ul ng-hide="appcontroller">
+              <li>
+                <a href="app.DemoComplexModalController.html" class="className">DemoComplexModalController</a>
+              </li><li>
+                <a href="app.DemoController.html" class="className">DemoController</a>
+              </li><li>
+                <a href="app.DemoMediaDetailsModalController.html" class="className">DemoMediaDetailsModalController</a>
+              </li><li>
+                <a href="app.DemoSimpleModalController.html" class="className">DemoSimpleModalController</a>
+              </li><li>
+                <a href="app.ForgetController.html" class="className">ForgetController</a>
+              </li><li>
+                <a href="app.HomeController.html" class="className">HomeController</a>
+              </li><li>
+                <a href="app.loginController.html" class="className">loginController</a>
+              </li><li>
+                <a href="app.MediaModalController.html" class="className">MediaModalController</a>
+              </li><li>
+                <a href="app.MenuController.html" class="className">MenuController</a>
+              </li><li>
+                <a href="app.MessageAddController.html" class="className">MessageAddController</a>
+              </li><li>
+                <a href="app.MessageController.html" class="className">MessageController</a>
+              </li><li>
+                <a href="app.MessageEditController.html" class="className">MessageEditController</a>
+              </li><li>
+                <a href="app.ModalConfirmationController.html" class="className">ModalConfirmationController</a>
+              </li><li>
+                <a href="app.NavigationController.html" class="className">NavigationController</a>
+              </li><li>
+                <a href="app.NewsAddController.html" class="className">NewsAddController</a>
+              </li><li>
+                <a href="app.NewsController.html" class="className">NewsController</a>
+              </li><li>
+                <a href="app.NewsDeleteModalController.html" class="className">NewsDeleteModalController</a>
+              </li><li>
+                <a href="app.NewsEditController.html" class="className">NewsEditController</a>
+              </li><li>
+                <a href="app.NotFoundController.html" class="className">NotFoundController</a>
+              </li><li>
+                <a href="app.TreesController.html" class="className">TreesController</a>
+              </li>
+            </ul>
+          </ul><ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="appController = !appController">
+                Controller
+              </a>
+              <i ng-cloak="" ng-show="appController">+</i>
+            </h3>
+            <ul ng-hide="appController">
+              <li>
+                <a href="app.project.html" class="className">project</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_auth -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_auth = !moduleapp_auth">
+            module: app.auth
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_auth">+</i>
+        </h3>
+        <li id="app.auth" ng-hide="moduleapp_auth">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_authservice = !app_authservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_authservice">+</i>
+            </h3>
+            <ul ng-hide="app_authservice">
+              <li>
+                <a href="app.auth.AuthentificationService.html" class="className">AuthentificationService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_cache -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_cache = !moduleapp_cache">
+            module: app.cache
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_cache">+</i>
+        </h3>
+        <li id="app.cache" ng-hide="moduleapp_cache">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_cacheservice = !app_cacheservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_cacheservice">+</i>
+            </h3>
+            <ul ng-hide="app_cacheservice">
+              <li>
+                <a href="app.cache.CacheService.html" class="className">CacheService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_flash -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_flash = !moduleapp_flash">
+            module: app.flash
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_flash">+</i>
+        </h3>
+        <li id="app.flash" ng-hide="moduleapp_flash">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_flashservice = !app_flashservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_flashservice">+</i>
+            </h3>
+            <ul ng-hide="app_flashservice">
+              <li>
+                <a href="app.flash.Flashservice.html" class="className">Flashservice</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_media -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_media = !moduleapp_media">
+            module: app.media
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_media">+</i>
+        </h3>
+        <li id="app.media" ng-hide="moduleapp_media">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_mediaservice = !app_mediaservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_mediaservice">+</i>
+            </h3>
+            <ul ng-hide="app_mediaservice">
+              <li>
+                <a href="app.media.MediaService.html" class="className">MediaService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_message -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_message = !moduleapp_message">
+            module: app.message
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_message">+</i>
+        </h3>
+        <li id="app.message" ng-hide="moduleapp_message">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_messageservice = !app_messageservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_messageservice">+</i>
+            </h3>
+            <ul ng-hide="app_messageservice">
+              <li>
+                <a href="app.message.MessageService.html" class="className">MessageService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_navigation -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_navigation = !moduleapp_navigation">
+            module: app.navigation
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_navigation">+</i>
+        </h3>
+        <li id="app.navigation" ng-hide="moduleapp_navigation">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_navigationservice = !app_navigationservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_navigationservice">+</i>
+            </h3>
+            <ul ng-hide="app_navigationservice">
+              <li>
+                <a href="app.navigation.NavigationService.html" class="className">NavigationService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_news -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_news = !moduleapp_news">
+            module: app.news
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_news">+</i>
+        </h3>
+        <li id="app.news" ng-hide="moduleapp_news">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_newsservice = !app_newsservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_newsservice">+</i>
+            </h3>
+            <ul ng-hide="app_newsservice">
+              <li>
+                <a href="app.news.NewsService.html" class="className">NewsService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_push -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_push = !moduleapp_push">
+            module: app.push
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_push">+</i>
+        </h3>
+        <li id="app.push" ng-hide="moduleapp_push">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_pushservice = !app_pushservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_pushservice">+</i>
+            </h3>
+            <ul ng-hide="app_pushservice">
+              <li>
+                <a href="app.push.PushService.html" class="className">PushService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_request -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_request = !moduleapp_request">
+            module: app.request
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_request">+</i>
+        </h3>
+        <li id="app.request" ng-hide="moduleapp_request">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_requestservice = !app_requestservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_requestservice">+</i>
+            </h3>
+            <ul ng-hide="app_requestservice">
+              <li>
+                <a href="app.request.RequestService.html" class="className">RequestService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_search -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_search = !moduleapp_search">
+            module: app.search
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_search">+</i>
+        </h3>
+        <li id="app.search" ng-hide="moduleapp_search">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_searchservice = !app_searchservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_searchservice">+</i>
+            </h3>
+            <ul ng-hide="app_searchservice">
+              <li>
+                <a href="app.search.SearchService.html" class="className">SearchService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_theme -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_theme = !moduleapp_theme">
+            module: app.theme
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_theme">+</i>
+        </h3>
+        <li id="app.theme" ng-hide="moduleapp_theme">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_themeservice = !app_themeservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_themeservice">+</i>
+            </h3>
+            <ul ng-hide="app_themeservice">
+              <li>
+                <a href="app.theme.SearchService.html" class="className">SearchService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_translate -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_translate = !moduleapp_translate">
+            module: app.translate
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_translate">+</i>
+        </h3>
+        <li id="app.translate" ng-hide="moduleapp_translate">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_translateservice = !app_translateservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_translateservice">+</i>
+            </h3>
+            <ul ng-hide="app_translateservice">
+              <li>
+                <a href="app.translate.TranslateService.html" class="className">TranslateService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_trees -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_trees = !moduleapp_trees">
+            module: app.trees
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_trees">+</i>
+        </h3>
+        <li id="app.trees" ng-hide="moduleapp_trees">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_treesservice = !app_treesservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_treesservice">+</i>
+            </h3>
+            <ul ng-hide="app_treesservice">
+              <li>
+                <a href="app.trees.TreeService.html" class="className">TreeService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_upload -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_upload = !moduleapp_upload">
+            module: app.upload
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_upload">+</i>
+        </h3>
+        <li id="app.upload" ng-hide="moduleapp_upload">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_uploadservice = !app_uploadservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_uploadservice">+</i>
+            </h3>
+            <ul ng-hide="app_uploadservice">
+              <li>
+                <a href="app.upload.Uploadservice.html" class="className">Uploadservice</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul><ul class="module">
+        <!-- app_user -->
+        <h3>
+          <a href="" class="menu" ng-click="moduleapp_user = !moduleapp_user">
+            module: app.user
+          </a>
+          <i ng-cloak="" ng-show="moduleapp_user">+</i>
+        </h3>
+        <li id="app.user" ng-hide="moduleapp_user">
+          <ul class="group">
+            <h3>
+              <a href="" class="sousMenu" ng-click="app_userservice = !app_userservice">
+                service
+              </a>
+              <i ng-cloak="" ng-show="app_userservice">+</i>
+            </h3>
+            <ul ng-hide="app_userservice">
+              <li>
+                <a href="app.user.UserService.html" class="className">UserService</a>
+              </li>
+            </ul>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div id="content" class="page-wrap">
+      <h1 class="title">
+        source : project.js
+      </h1>
+      <div id="main" class="big-container">
+        <!-- source code html -->
+        <article>
+          <pre class="prettyprint source linenums"><code>﻿(function () {
+    'use strict';
+    /**
+     * @memberof app
+     * @ngdoc Controller
+     * @name project
+     * @param ngRoute manages route on app
+     * @param ngCookies manages cookie on app
+     * @param angularSpinner manages to display spinner
+     * @param infinite-scroll manages scroll
+     * @param angularModalservice manages to display modal
+     * @param ui.tree manages to display tree
+     * @param textAngular manages to display editor
+     * @param frapontillo.bootstrap-switch
+     * @param ui.bootstrap
+     * @param ngMockE2E manages to mock app
+     * @param {module} app.media manages to use mock on media service
+     * @param {module} app.auth manages to use mock on authentification service
+     * @param {module} app.cache
+     * @param {module} app.flash
+     * @param {module} app.image
+     * @param {module} app.trees manages to use mock on tree service
+     * @param {module} app.message manages to use mock on message service
+     * @param {module} app.news manages to use mock on news service
+     * @param {module} app.navigation manages to use mock on navigation service
+     * @param {module} app.push manages to use mock on push service
+     * @param {module} app.request manages to use mock on request service
+     * @param {module} app.search manages to use mock on search service
+     * @param {module} app.theme manages to use mock on theme service
+     * @param {module} app.translate manages to use mock on translate service
+     * @param {module} app.upload manages to use mock on upload service
+     * @param {module} app.user manages to use mock on user service
+     * @description
+     *      Implementation of app controller.
+     *      Initialize
+     *          constant language (english),
+     *          charge translate file,
+     *          look if user is login due to cookie.
+     *      Initialize
+     *          route and ng mock to intercept and simulate response from API.
+     */
+    angular
+        .module('app', [
+            'ngRoute', 
+            'ngCookies', 
+            'angularSpinner',
+            'infinite-scroll', 
+            'angularModalService',
+            'ui.tree',
+            'textAngular',
+            'frapontillo.bootstrap-switch',
+            'ui.bootstrap',
+            'ngMockE2E',
+            'app.media',
+            'app.auth',
+            'app.cache',
+            'app.flash',
+            'app.trees',
+            'app.message',
+            'app.news',
+            'app.navigation',
+            'app.push',
+            'app.request',
+            'app.search',
+            'app.theme',
+            'app.translate',
+            'app.upload',
+            'app.user'
+        ])
+        .config(config)
+        .run(run);
+    // Define constants
+    angular
+        .module('app')
+        .constant('LANGUAGE', {
+            DEFAULT: 'en_US'
+        })
+        .constant('API', {
+            DEFAULT_VERSION: '1.0'
+        });
+    config.$inject = ['$routeProvider', '$provide'];
+    function config($routeProvider, $provide) {
+        var provide = $provide;
+        $routeProvider
+            .when('/', {
+                controller: 'HomeController',
+                templateUrl: 'home/home-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/login', {
+                controller: 'LoginController',
+                templateUrl: 'login/login-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/forget', {
+                controller: 'ForgetController',
+                templateUrl: 'forget/forget-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/news', {
+                controller: 'NewsController',
+                templateUrl: 'news/news-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/news/add', {
+                controller: 'NewsAddController',
+                templateUrl: 'news/news-add-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/news/:id', {
+                controller: 'NewsEditController',
+                templateUrl: 'news/news-edit-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/images', {
+                controller: 'ImageController',
+                templateUrl: 'image/image-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/navigation', {
+                controller: 'NavigationController',
+                templateUrl: 'navigation/navigation-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/timeline', {
+                controller: 'TimelineController',
+                templateUrl: 'timeline/timeline-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/inspirations', {
+                controller: 'InspirationsController',
+                templateUrl: 'inspirations/inspirations-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/tree', {
+                controller: 'TreesController',
+                templateUrl: 'tree/tree-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/demo', {
+                controller: 'DemoController',
+                templateUrl: 'demo/demo.view.html',
+                controllerAs: 'vm'
+            })
+            .when('/terms', {
+                controller: 'TermsController',
+                templateUrl: 'terms/terms-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/reporting', {
+                controller: 'ReportingController',
+                templateUrl: 'reporting/reporting-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/message', {
+                controller: 'MessageController',
+                templateUrl: 'message/message-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/message/add', {
+                controller: 'MessageAddController',
+                templateUrl: 'message/message-add-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/message/:id', {
+                controller: 'MessageEditController',
+                templateUrl: 'message/message-edit-view.html',
+                controllerAs: 'vm'
+            })
+            .when('/not-found', {
+                controller: 'NotFoundController',
+                templateUrl: 'notFound/notFound-view.html',
+                controllerAs: 'vm'
+            })
+            //.otherwise({ redirectTo: '/not-found' });
+    }
+    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http', '$httpBackend', 'TranslateService', 'ModalService'];
+    function run($rootScope, $location, $cookieStore, $http, $httpBackend, TranslateService, ModalService) {
+        var _preventNavigation = false;
+        var _preventNavigationUrl = null;
+        var search = {
+            service: "Médiathèque",
+            results: [{
+                "id": "0",
+                "name": "image1",
+                "weight": "1",
+                "url": "upload/reload.png",
+                "extension": "png",
+                "fileType": "image",
+                "dimensions": {
+                    "width": "100",
+                    "height": "200"
+                }
+            }]
+        };
+        var file = {
+            "files": [
+                {
+                    "id" : "1",
+                    "name" : "image0",
+                    "weight" :"1k",
+                    "url" : "upload/image.png",
+                    "extension" : "png",
+                    "fileType" : "image",
+                    "dimensions" : {
+                        "width" : "100",
+                        "height": "200"
+                    }
+                },{
+                    "id" : "2",
+                    "name" : "image0",
+                    "weight" :"1k",
+                    "url" : "upload/image.png",
+                    "extension" : "png",
+                    "fileType" : "image",
+                    "dimensions" : {
+                        "width" : "100",
+                        "height": "200"
+                    }
+                }
+            ]
+        };
+        var treesInfo = [
+            {
+                "id": 1,
+                "label": "Quizzes",
+                "childs": [
+                    {
+                        "id": 2,
+                        "label": "Quizz numéro 1",
+                        "childs": []
+                    },
+                    {
+                        "id": 3,
+                        "label": "Quizz numéro 2",
+                        "childs": []
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "label": "Inspirations",
+                "childs": []
+            }
+        ];
+        var msg = [{
+            'id' : '0',
+            'title' : 'titre1',
+            'name': 'name1',
+            'date': '01/01/2015'
+        },
+            {
+                'id' : '1',
+                'title' : 'titre1',
+                'name': 'name2',
+                'date': '01/01/2015'
+            },
+            {
+                'id' : '2',
+                'title' : 'titre1',
+                'name': 'name3',
+                'date': '01/01/2015'
+            },
+            {
+                'id' : '3',
+                'title' : 'titre1',
+                'name': 'name4',
+                'date': '01/01/2015'
+            },
+            {
+                'id' : '4',
+                'title' : 'titre1',
+                'name': 'name5',
+                'date': '01/01/2015'
+            }
+        ];
+        var nav =[
+            {
+                "id": "1",
+                "label": "Navigation",
+                "readonly": true
+            },
+            {
+                "id": "2",
+                "label": "Learnings"
+            },
+            {
+                "id": "3",
+                "label": "Inspirations"
+            },
+            {
+                "id": "4",
+                "label": "Actus Marques"
+            }
+        ];
+        var news = [{
+            id: "1",
+            title: "Lorem Ipsum",
+            excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            content: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            created_at: "1451644932",
+            updated_at: "1451644932",
+            publish_start: "1451644932",
+            publish_end: "",
+            active: true
+        }, {
+            id: "2",
+            title: "Why do we use it ?",
+            excerpt: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+            content: "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+            created_at: "1450725840",
+            updated_at: "1450734564",
+            publish_start: "1450725840",
+            publish_end: "",
+            active: false
+        }, {
+            id: "3",
+            title: "Where does it come from ?",
+            excerpt: "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+            content: "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.",
+            created_at: "1450098420",
+            updated_at: "1450098420",
+            publish_start: "1450098420",
+            publish_end: "1451645932",
+            active: true
+        }];
+        var message = {id : 1,active: true, title: "aaaa", text: "aaaaaa"};
+        var oneNews = [{
+            id: "1",
+            title: "Lorem Ipsum",
+            excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            content: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+            created_at: "1451644932",
+            updated_at: "1451644932",
+            publish_start: "1451644932",
+            publish_end: "",
+            active: true
+        }];
+        var terms = {
+            "ut" :"10",
+            "um" : "5",
+            "salon" : "10",
+            "salonEli" : "30",
+            "quizByUser" : "15",
+            "quizBySalon" : "10",
+            "vente" : "10",
+            "venteMonth" : "20",
+            "venteByUser" : "10",
+            "venteBySalon" : "10",
+            "pointUsers" : "15",
+            "pointSalon" : "10",
+            "pointUsing" : "10",
+            "present" : "5"
+        };
+        var languages = [{
+            'label': 'English',
+            'code': 'en_US'
+        }, {
+            'label': 'French',
+            'code': 'fr_FR'
+        }];
+        var fileUpload = {
+            files:[ {
+                "id": "1",
+                "name": "image1",
+                "weight": "1",
+                "url": "upload/reload.png",
+                "extension": "png",
+                "fileType": "image",
+                "dimensions": {
+                    "width": "100",
+                    "height": "200"
+                }
+            }]
+        };
+        $httpBackend.whenGET(/\.html$/).passThrough();
+        $httpBackend.whenGET(/\.json$/).passThrough();
+        $httpBackend.expect("GET", "/media/allMedia");
+        $httpBackend.whenGET("/media/allMedia").respond(file);
+        $httpBackend.expect("GET", "/media/searchMedia");
+        $httpBackend.whenGET("/media/searchMedia").respond(search);
+        $httpBackend.expect("GET", "/media/deleteMedia");
+        $httpBackend.whenGET("/media/deleteMedia").respond("fichier supprimer avec succées");
+        $httpBackend.expect("GET", "/trees/getTree");
+        $httpBackend.whenGET("/trees/getTree").respond(treesInfo);
+        $httpBackend.expect("GET", "/message/allMessage");
+        $httpBackend.whenGET("/message/allMessage").respond(msg);
+        $httpBackend.expect("POST", "/message/updateMessage");
+        $httpBackend.whenPOST("/message/updateMessage").respond("fichier update");
+        $httpBackend.expect("GET", "/message/deleteMessage");
+        $httpBackend.whenGET("/message/deleteMessage").respond("fichier supprimer");
+        $httpBackend.expect("POST", "/message/addMessage");
+        $httpBackend.whenPOST("/message/addMessage").respond(message);
+        $httpBackend.expect("GET", "/navigation/getNavigation");
+        $httpBackend.whenGET("/navigation/getNavigation").respond(nav);
+        $httpBackend.expect("GET", "/news/allNews");
+        $httpBackend.whenGET("/news/allNews").respond(news);
+        $httpBackend.expect("POST", "/news/addNews");
+        $httpBackend.whenPOST("/news/addNews").respond(oneNews);
+        $httpBackend.expect("POST", "/news/updateNews");
+        $httpBackend.whenPOST("/news/updateNews").respond("ok");
+        $httpBackend.expect("POST", "/news/deleteNews");
+        $httpBackend.whenPOST("/news/deleteNews").respond("ok");
+        $httpBackend.expect("POST", "/push/send");
+        $httpBackend.whenPOST("/push/send").respond("ok");
+        $httpBackend.expect("GET", "/reporting/download");
+        $httpBackend.whenGET("/reporting/download").respond(terms);
+        $httpBackend.expect("GET", "/translate/allLanguage");
+        $httpBackend.whenGET("/translate/allLanguage").respond(languages);
+        $httpBackend.expect("POST", "upload/fileUpload");
+        $httpBackend.whenPOST("upload/fileUpload").respond(fileUpload);
+        $rootScope.globals = $cookieStore.get('globals') || {};
+        $rootScope.currentLanguage = 'en_US';
+        if ($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
+            $rootScope.currentLanguage = $cookieStore.get('language');
+            $rootScope.theme = $cookieStore.get('theme');
+        }
+        TranslateService.InitTranslate($rootScope.currentLanguage).then(function() {
+            $rootScope.chargeTranslate = true;
+        });
+        $rootScope.$on('$locationChangeStart', function (event, next, current, newState, oldState) {
+            if (_preventNavigationUrl != current || _preventNavigationUrl == null) {
+                $rootScope.allowNavigation();
+            }
+            if (_preventNavigation) {
+                var path = $location.path();
+                ModalService.showModal({
+                    templateUrl: "modal/modal-confirmation-view.html",
+                    controller: "ModalConfirmationController"
+                }).then(function(modal) {
+                    modal.element.modal();
+                    modal.close.then(function(result) {
+                        if (result) {
+                            $rootScope.allowNavigation();
+                            $location.path(path);
+                        }
+                    });
+                });
+                event.preventDefault();
+            }
+            else {
+                var restrictedPage = $.inArray($location.path(), ['/login', '/forget']) === -1;
+                $rootScope.menuAvalaible = restrictedPage;
+                var loggedIn = $rootScope.globals.currentUser;
+                if (restrictedPage && !loggedIn) {
+                    $location.path('/login');
+                }
+            }
+        });
+        window.onbeforeunload = function() {
+            /** Use the same data that we've set in our angular app
+             */
+            if (_preventNavigation && $location.absUrl() == _preventNavigationUrl) {
+                return "You have unsaved changes, do you want to continue?";
+            }
+        }
+        $rootScope.allowNavigation = function() {
+            _preventNavigation = false;
+        };
+        $rootScope.preventNavigation = function() {
+            _preventNavigation = true;
+            _preventNavigationUrl = $location.absUrl();
+        };
+    }
+})();</code></pre>
+        </article>
+        <!-- index.html -->
+        <!-- class files -->
+      </div>
+      <footer style="clear:both">
+        Documentation generated by
+        <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+        using
+        <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template</a>
+      </footer>
+    </div>
+    <!--%= prettyJson %-->
+    <script>
+      prettyPrint();
+      var lineNo = window.location.hash.match(/#line([0-9]+)$/);
+      lineNo && document.querySelector("ol li:nth-child("+(lineNo[1])+")").scrollIntoView();
+    </script>
+  </body>
+</html>

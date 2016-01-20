@@ -1,0 +1,27 @@
+div.modal.fade#modal-detail
+    div.modal-dialog.modal-lg
+        div.modal-content
+            div.modal-header
+                button.close(type="button", ng-click="closeDetails(false)", data-dismiss="modal", aria-hidden="true") &times;
+                h4.modal-title {{ title }}
+            div.modal-body
+                div.row
+                    div.col-xs-7
+                        img(ng-src="{{ file.url }}")
+                    div.col-xs-5
+                        h5 {{ "Details file :" | translate }}
+                        div.form-group
+                            span.label {{ "Name :" | translate }}
+                            span.value {{ file.name }}
+                        div.form-group
+                            span.label {{ "Size :" | translate }}
+                            span.value {{ file.weight | bytes }}
+                        div.form-group(ng-if="file.type == 'image'")
+                            span.label {{ "Dimensions :" | translate }}
+                            span.value {{ file.dimensions.width }}x{{ file.dimensions.height }} (pixels)
+                        div.form-group
+                             button.btn(type="button", ng-click="deleteFile(file)") {{ "Delete" | translate }}
+                             button.btn.btn-primary(type="button", ngf-select="editFile($file,file)", data-dismiss="modal") {{ "Edit" | translate }}
+            div.modal-footer
+                button.btn(type="button", ng-click="closeDetails(false)", data-dismiss="modal") {{ cancelButton }}
+                button.btn.btn-primary(type="button", ng-click="closeDetails()", data-dismiss="modal") {{ submitButton }}

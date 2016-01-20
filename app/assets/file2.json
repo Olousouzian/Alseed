@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "id": "28",
+      "name": "image0",
+      "weight": "1k",
+      "url": "upload/image.png",
+      "extension": "png",
+      "fileType": "image",
+      "dimensions": {
+        "width": "100",
+        "height": "200"
+      }
+    },
+    {
+      "id": "29",
+      "name": "image0",
+      "weight": "1k",
+      "url": "upload/image.png",
+      "extension": "png",
+      "fileType": "image",
+      "dimensions": {
+        "width": "100",
+        "height": "200"
+      }
+    }
+  ]
+}

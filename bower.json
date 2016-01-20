@@ -1,6 +1,6 @@
 {
-  "name": "ALoginSeed",
-  "homepage": "https://github.com/Olousouzian/Alogin",
+  "name": "ALSEED",
+  "homepage": "https://github.com/Olousouzian/Alseed.git",
   "description": "",
   "main": "",
   "moduleType": [],
@@ -19,6 +19,23 @@
     "angular-spinner": "~0.8.0",
     "jquery": "jQuery#~2.1.4",
     "bootstrap": "~3.3.6",
-    "clone.js": "clone#~0.1.0"
+    "clone.js": "clone#~0.1.0",
+    "ng-file-upload": "~10.1.14",
+    "ngInfiniteScroll": "~1.2.1",
+    "angular-mocks": "~1.4.8",
+    "angular-modal-service": "0.6.9",
+    "angular-ui-tree": "~2.13.0",
+    "textAngular": "~1.4.6",
+    "angular-bootstrap-switch": "~0.4.1",
+    "angular-bootstrap": "~1.0.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/css/bootstrap-theme.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
   }
 }

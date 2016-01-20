@@ -1,0 +1,36 @@
+/* Font import */
+
+/* Color vars */
+$primary-color: #A79B64;
+$secondary-color: #6A6E74; 
+$tertiary-color: #646C75;
+$background-color: #EBEFF3;
+
+/* Text color vars */
+$primary-text-color: #6A6E74;
+
+/* Font vars */
+$global-font: Lato, sans-serif;
+
+body {
+    color: $primary-text-color!important;;
+}
+
+.container {
+    background: $background-color;
+}
+
+/* Switch */
+.bootstrap-switch-wrapper {
+    &.bootstrap-switch-on {
+        .bootstrap-switch-label:before {
+            background: $primary-color;
+        }
+    }
+
+    &.bootstrap-switch-off {
+        .bootstrap-switch-label:before {
+            background: $secondary-color;
+        }
+    }
+}

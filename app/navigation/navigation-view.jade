@@ -1,0 +1,23 @@
+h1 {{ "Navigation" | translate }}
+p {{ "This page allows you to manage the order of menu items and their labels." | translate }}
+
+div(ui-tree)
+    ol(ui-tree-nodes="", ng-model="vm.items" id="tree-root")
+        li(ng-repeat="item in vm.items", ui-tree-node)
+            div.panel
+                div.panel-heading
+                    h4 {{ item.label }}
+                        a.pull-right.btn.btn-success.btn.xs(data-nodrag, ng-click="vm.edit(item)")
+                            span.glyphicon.glyphicon-pencil
+                div.panel-collapse.collapse(ng-class="{'in': item.editing}")
+                    div.panel-body
+                        p {{ "Change element label" | translate }}
+                        p
+                            input(type="text", ng-model="item.temp")
+                        p.warning(ng-if="item.error") {{ item.error }}
+                        p
+                            input(type="submit", value="Valider", ng-click="vm.updateItem(item)")
+
+p
+    a.btn.btn-primary(ng-click="vm.saveItems()")
+        span.glyphicon.glyphicon-floppy-save {{ "Save" | translate }}

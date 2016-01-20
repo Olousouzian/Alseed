@@ -16,33 +16,57 @@ $ git clone https://github.com/Olousouzian/Alseed.git
 ```
 
 
-Then install Bower dependencies
+Then install NPM and Bower dependencies
 
 ```sh
-$ bower install 
+$ npm install
+$ bower install
 ```
 
-## Work 
+## Compilation
 
-Now, read/learn the code and use it !
+Compile all sources by
 
+```sh
+$ npm run build
+```
+
+## Demo
+
+Now, you can go to this following URL : 
+
+```sh
+http://yourdomain.com/public/
+```
+
+## Documentation
+
+If you want to generate a new documentation :
+
+```sh
+$ ./generate_doc.sh
+```
+
+Use this credentials :
+
+- Login : **alseed**
+- Password : **alseed123**
 
 ## Features
 
-- Language Template Engine
-- Media Library (Wordpress Style)
+- Simple Responsive Design made with Bootstrap
+- Simple Multi-Language Template Engine (traduction)
+- Media Library (Wordpress style)
 - Search Engine
-
 
 ## Services
 
 - Authentification
 - Cache
-- Flash
+- Flash (Bootstrap)
 - Image
 - News
 - Media
-- Push
 - Upload
 - User
 - Modal
