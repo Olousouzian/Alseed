@@ -17,7 +17,7 @@
      * @param $http Permit to call API
      */
     PushService.$inject = ['$q', '$http'];
-    function PushService($q) {
+    function PushService($q, $http) {
         var service = {};
 
         service.SendNotification = SendNotification;

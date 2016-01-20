@@ -51,8 +51,9 @@
             'frapontillo.bootstrap-switch',
             'ui.bootstrap',
             'ngMockE2E',
-            'app.media',
+            'app.translate',
             'app.auth',
+            'app.media',
             'app.cache',
             'app.flash',
             'app.trees',
@@ -63,7 +64,6 @@
             'app.request',
             'app.search',
             'app.theme',
-            'app.translate',
             'app.upload',
             'app.user'
         ])
@@ -425,6 +425,8 @@
         $httpBackend.whenGET("/reporting/download").respond(terms);
         $httpBackend.expect("GET", "/translate/allLanguage");
         $httpBackend.whenGET("/translate/allLanguage").respond(languages);
+        $httpBackend.expect("GET", "translate/en_US.po");
+        $httpBackend.whenGET("translate/en_US.po").respond('translate/en_US.po');
         $httpBackend.expect("POST", "upload/fileUpload");
         $httpBackend.whenPOST("upload/fileUpload").respond(fileUpload);
         $rootScope.globals = $cookieStore.get('globals') || {};

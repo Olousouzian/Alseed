@@ -27,7 +27,7 @@
         service.GetTranslate = GetTranslate;
         service.ClearCache = ClearCache;
         service.GetLanguages = GetLanguages;
-        
+
         // Local storage
         var currentLang = {};
 
@@ -54,7 +54,7 @@
                 }
 
                 if (!(lang in currentLang)) {
-                    RequestService.Get('/translate/' + lang + '.json').then(function (response) {
+                    RequestService.Get('translate/' + lang + '.po').then(function (response) {
                         var success = Object.clone(SuccessResponse);
                         if (response.success === true) {
                             currentLang[lang]=response.data;
@@ -82,22 +82,23 @@
          */
         function GetTranslate(input, args) {
             var trans = undefined;
-            
             if (angular.isUndefined(currentLang[$rootScope.currentLanguage]) === false) {
-                trans = currentLang[$rootScope.currentLanguage][input];
-            
-                if (angular.isUndefined(trans) === false) {
-                    if (angular.isUndefined(args) === false) {
-                        var occurencies = trans.match(/%(\d+)s/ig);
-                        angular.forEach(occurencies, function (occurence, key) {
-                            var index = occurence.replace('%', '').replace('s', '');
-                            trans = trans.replace(occurencies[key], args[index - 1]);
-                        });
+                var str = 'msgid "' + input + '"\nmsgstr "((?:.|)*?)"';
+                var sResult = currentLang[$rootScope.currentLanguage].match(str);
+                if (sResult !== null) {
+                    trans = sResult[1];
+                    if (angular.isUndefined(trans) === false) {
+                        if (angular.isUndefined(args) === false) {
+                            var occurencies = trans.match(/%(\d+)s/ig);
+                            angular.forEach(occurencies, function (occurence, key) {
+                                var index = occurence.replace('%', '').replace('s', '');
+                                trans = trans.replace(occurencies[key], args[index - 1]);
+                            });
+                        }
+                        return trans;
                     }
-                    return trans;
                 }
             }
-            
             return input;
         }
         /**
