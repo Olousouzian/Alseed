@@ -48,6 +48,6 @@ Now, read/learn the code and use it !
 - Modal
 - Confirmation
 
-# LICENSE
+# License
 
 This solution is under MIT license.
