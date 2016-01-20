@@ -37,6 +37,10 @@ Now, you can go to this following URL :
 
 http://yourdomain.com/public/
 
+Use this credentials :
+
+- Login : **alseed**
+- Password : **alseed123**
 
 ## Documentation
 
@@ -49,11 +53,6 @@ If you want to generate a new documentation :
 ```sh
 $ ./generate_doc.sh
 ```
-
-Use this credentials :
-
-- Login : **alseed**
-- Password : **alseed123**
 
 ## Features
 
