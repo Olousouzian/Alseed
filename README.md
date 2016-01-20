@@ -47,3 +47,7 @@ Now, read/learn the code and use it !
 - User
 - Modal
 - Confirmation
+
+# LICENSE
+
+This solution is under MIT license.
